@@ -1,0 +1,739 @@
+{
+  "version": 1,
+  "hash": "fb74d77aaabcc81433bbabb487f5d9f9e268796d84a96507532a0361a5895852",
+  "resources": [
+    {
+      "id": "5e58772c-ef16-4e98-9179-e9f91c12180b",
+      "title": "All Aboard Ohio Rack Card: 50 Second Playbook to Improving Our State",
+      "shortTitle": "All Aboard Ohio Rack Card",
+      "summary": "50 Second Playbook to Improving Our State",
+      "type": "Toolkit",
+      "typeSlug": "toolkit",
+      "categories": [
+        {
+          "id": "a61f9f89-576b-4d18-8b4e-cb1952fe382a",
+          "title": "Toolkit"
+        }
+      ],
+      "path": "/toolkit/all-aboard-ohio-rack-card-50-second-playbook-to-improving-our-state--5e58772c-ef16-4e98-9179-e9f91c12180b/",
+      "featured": true,
+      "image": null,
+      "updated": "2026-11-10T20:40:01.947Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "foo",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Content goes here.",
+                  "decorations": []
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [
+        {
+          "url": "https://www.allaboardohio.org/_files/ugd/903aba_a5971e118e34414ab52357db0f4a474d.pdf",
+          "name": "TriFold Brochure.pdf"
+        }
+      ],
+      "externalLinks": []
+    },
+    {
+      "id": "7e8ca1e5-912d-4000-a836-9d4af11ef44c",
+      "title": "Economic Impact of the 3C+D Corridor Passenger Rail Project",
+      "shortTitle": "Economic Impact of the 3C+D Corridor",
+      "summary": "Overall, investment in the 3C+D corridor will contribute $106 million to $107 million to gross state product. After the initial investment, the corridor will contribute $25 million to $47 million to gross state product per year from the economic impact of ridership.",
+      "type": "Onboarding",
+      "typeSlug": "onboarding",
+      "categories": [
+        {
+          "id": "c26ab23a-e83c-4824-aaef-dc92438e5d62",
+          "title": "Onboarding"
+        }
+      ],
+      "path": "/onboarding/economic-impact-of-the-3c-d-corridor-passenger-rail-project--7e8ca1e5-912d-4000-a836-9d4af11ef44c/",
+      "featured": true,
+      "image": "https://static.wixstatic.com/media/cb899b_a0a121dbaa374badb6eae24455ded1f7~mv2.png",
+      "updated": "2026-11-10T21:38:43.141Z",
+      "content": {
+        "nodes": []
+      },
+      "attachments": [],
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/c6e005440f1b7d2857fa-640.webp",
+        "srcSet": "/images/generated/c6e005440f1b7d2857fa-320.webp 320w, /images/generated/c6e005440f1b7d2857fa-640.webp 640w, /images/generated/c6e005440f1b7d2857fa-960.webp 960w",
+        "width": 640,
+        "height": 635
+      }
+    },
+    {
+      "id": "84a1aa95-ecc9-4979-a528-c777cd95e09f",
+      "title": "Ohio Runs on Rail Book",
+      "shortTitle": "Ohio Runs on Rail Book",
+      "summary": "Intercity Passenger Rail to Connect Our State, an executive summary vision on passenger rail and Amtrak in Ohio.",
+      "type": "Analysis",
+      "typeSlug": "analysis",
+      "categories": [
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Analysis"
+        }
+      ],
+      "path": "/analysis/ohio-runs-on-rail-book--84a1aa95-ecc9-4979-a528-c777cd95e09f/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_7384f4b00b89475799a020029a5fb0e5~mv2.png",
+      "updated": "2026-11-10T20:38:24.646Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "viewer-foo",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "At All Aboard Ohio, we believe that passenger rail is more than just a mode of transportation—it's the key to building a more connected, thriving, and sustainable future for our state. With the release of our executive summary, ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Ohio Runs on Rail: Intercity Passenger Rail to Connect Our State",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    },
+                    {
+                      "type": "ITALIC"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": ", we are excited to share our vision and call to action for revitalizing Ohio’s rail network.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [
+        {
+          "url": "https://www.allaboardohio.org/_files/ugd/cb899b_a2db389e3c8a417a9792466cdb8450f7.pdf",
+          "name": "All Aboard Ohio - Ohio Runs On Rail.pdf"
+        }
+      ],
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/01ef12c1e658d662adfd-640.webp",
+        "srcSet": "/images/generated/01ef12c1e658d662adfd-320.webp 320w, /images/generated/01ef12c1e658d662adfd-640.webp 640w, /images/generated/01ef12c1e658d662adfd-960.webp 960w",
+        "width": 640,
+        "height": 620
+      }
+    },
+    {
+      "id": "a65bdd10-1df4-4e29-92b5-b6fb7177f3ef",
+      "title": "About AAO Trifold Brochure",
+      "shortTitle": "About AAO Trifold Brochure",
+      "summary": "High level information about who All Aboard Ohio is and the Ohio passenger rail route proposals.",
+      "type": "Templates",
+      "typeSlug": "templates",
+      "categories": [
+        {
+          "id": "7d822588-340e-4e17-b3e4-f1adb4e118c3",
+          "title": "Templates"
+        }
+      ],
+      "path": "/templates/about-aao-trifold-brochure--a65bdd10-1df4-4e29-92b5-b6fb7177f3ef/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_5c8d3935139e44f7b4c5e772d49471cf~mv2.png",
+      "updated": "2026-11-10T20:38:28.585Z",
+      "content": {
+        "nodes": []
+      },
+      "attachments": [
+        {
+          "url": "https://bc127bd4-a563-4759-8ca2-ac96c2be1870.filesusr.com/ugd/903aba_a5971e118e34414ab52357db0f4a474d.pdf",
+          "name": "Download document 1"
+        }
+      ],
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/bfa199ae77c49920ec92-640.webp",
+        "srcSet": "/images/generated/bfa199ae77c49920ec92-320.webp 320w, /images/generated/bfa199ae77c49920ec92-640.webp 640w, /images/generated/bfa199ae77c49920ec92-960.webp 960w",
+        "width": 640,
+        "height": 576
+      }
+    },
+    {
+      "id": "d71e1482-6234-4778-9cec-e252f3da0cb2",
+      "title": "Fiscal Analysis of Operating Costs of Passenger Rail in Ohio",
+      "shortTitle": "Fiscal Analysis of Operating Costs of Passenger Rail in Ohio",
+      "summary": "Fiscal Analysis Prepared for All Aboard Ohio by Scioto Analysis",
+      "type": "Printables",
+      "typeSlug": "printables",
+      "categories": [
+        {
+          "id": "529c5287-bd31-4c97-a4c5-61598ab909e2",
+          "title": "Printables"
+        }
+      ],
+      "path": "/printables/fiscal-analysis-of-operating-costs-of-passenger-rail-in-ohio--d71e1482-6234-4778-9cec-e252f3da0cb2/",
+      "featured": false,
+      "image": null,
+      "updated": "2026-11-10T22:09:54.788Z",
+      "content": {
+        "nodes": []
+      },
+      "attachments": [
+        {
+          "url": "https://bc127bd4-a563-4759-8ca2-ac96c2be1870.filesusr.com/ugd/903aba_baf6e83ae6cf40cface66843e66c5616.pdf",
+          "name": "Download document 1"
+        }
+      ],
+      "externalLinks": []
+    },
+    {
+      "id": "dde3ec9f-9dbf-401e-9c86-c2fe42261c28",
+      "title": "Cincinnati Station Information",
+      "shortTitle": "Cincinnati Station Information",
+      "summary": "Insider information for traveling best through Cincinnati's Union Terminal - Provided by Union Terminal",
+      "type": "Uncategorized",
+      "typeSlug": "uncategorized",
+      "categories": [],
+      "path": "/uncategorized/cincinnati-station-information--dde3ec9f-9dbf-401e-9c86-c2fe42261c28/",
+      "featured": false,
+      "image": null,
+      "updated": "2026-11-10T20:34:36.557Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "2ayfq4",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Train 50/51, The Cardinal Amtrak is open from 12AM to 4AM everyday but Tuesday (a.k.a Monday Night)",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "2o43r7",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Union Terminal is a Staffed station with NO Amtrak Ticketing Kiosks and NO checked baggage storage. (Baggage assistance provided by Amtrak Staff)",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "0iz0a10",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Tickets can be purchased on the Amtrak Website: ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "www.Amtrak.com",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    },
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "http://www.Amtrak.com",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " or at Toll Free phone number: 1-800-USA-Rail (1-800-872-7245)",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "0e36z15",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "To Track your Train, go to the Amtrak Website: ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "www.amtrak.com/track-your-train",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    },
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "http://www.amtrak.com/track-your-train",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "pa36n18",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "​",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "yunhk22",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Cincinati Museum Staff are not Amtrak Employees, they are not permitted to assist with any Amtrak issues; to report suspicious activity or emergencies contact Amtrak Police: 1- 800-311-0008 >",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "oculx25",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Amtrak Passengers are not permitted inside the Museums or Rotunda after closing, but they may wait in the vestibule.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "l7d1427",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "​",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "nqiz431",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "For Taxi information ask Public Safety Parking",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "xn85b34",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Same-day and Overnight Parking are available at Union terminal",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "bob8k37",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Parking Lots are located on the left and right in front of the building",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "gg86w40",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Union Terminal Public Safety requires all passengers to leave their vehicles and contact information at the Public Safety Office (The glass office to the right of the entrance) before departing",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "c78ti43",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Museum Members receive Free Parking, to purchase a membership go to the Cincinnati Museum Center Website: ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "www.cincymuseum.org/members",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    },
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "http://www.cincymuseum.org/members",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " or call phone number: 513- 287-7041",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "8aguh48",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Non-member parking is $6 per day between 6AM to 9PM and $10 per day between 9PM and 6AM. (as of 2025)",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [],
+      "externalLinks": [
+        {
+          "url": "https://www.amtrak.com/stations/cin",
+          "name": "www.amtrak.com"
+        }
+      ]
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "6af3d9b12078954899477804",
+      "title": "This Giving Tuesday We’re Pulling Back the Curtain",
+      "summary": "See where your donation directly impacts our plans for educating Ohio communities, advancing corridors, expanding representation and overall strengthening our statewide momentum.",
+      "image": "https://static.wixstatic.com/media/cb899b_763ba5b796e24836823fe824dda0e99f~mv2.jpg",
+      "publishedDate": "2026-11-11T03:42:36.134Z",
+      "url": "https://www.allaboardohio.org/posts/this-giving-tuesday-we-re-pulling-back-the-curtain",
+      "thumbnail": {
+        "src": "/images/generated/104049fe469fb2a69362-640.webp",
+        "srcSet": "/images/generated/104049fe469fb2a69362-320.webp 320w, /images/generated/104049fe469fb2a69362-640.webp 640w, /images/generated/104049fe469fb2a69362-960.webp 960w",
+        "width": 640,
+        "height": 360
+      }
+    },
+    {
+      "id": "6ae644bb9098f9dec698601a",
+      "title": "Toledo Takes Center Stage in National Rail Conversation",
+      "summary": "For three days in October, Toledo became the center of the national passenger rail conversation as advocates, policymakers, and industry leaders gathered for RailNation 2026. As the event's local partner, All Aboard Ohio helped showcase the state's growing momentum, the opportunities ahead, and why Ohio's role in the national passenger rail network matters more than ever.",
+      "image": "https://static.wixstatic.com/media/cb899b_c007ae928a0e498ab9d73b197368ce7d~mv2.jpg",
+      "publishedDate": "2026-10-31T19:48:13.000Z",
+      "url": "https://www.allaboardohio.org/posts/toledo-takes-center-stage-in-national-rail-conversation",
+      "thumbnail": {
+        "src": "/images/generated/138af3db9e222bd77546-640.webp",
+        "srcSet": "/images/generated/138af3db9e222bd77546-320.webp 320w, /images/generated/138af3db9e222bd77546-640.webp 640w, /images/generated/138af3db9e222bd77546-960.webp 960w",
+        "width": 640,
+        "height": 427
+      }
+    },
+    {
+      "id": "6ae629a7ddc33b715a34025d",
+      "title": "Cleveland Business Leaders Get on Board",
+      "summary": "Cleveland's business community is paying attention to the future of passenger rail. Across two Lunch and Learn sessions, 91 business and community leaders explored what expanded service could mean for the region, with many adding their names to All Aboard Ohio's letter of support. As important decisions approach, these conversations are helping turn interest into advocacy.",
+      "image": "https://static.wixstatic.com/media/903aba_d8d1ccefbd6848e2b780b3305c32bd2d~mv2.png",
+      "publishedDate": "2026-10-31T19:14:32.000Z",
+      "url": "https://www.allaboardohio.org/posts/cleveland-business-leaders-get-on-board",
+      "thumbnail": {
+        "src": "/images/generated/83720c820efe146fa3b0-640.webp",
+        "srcSet": "/images/generated/83720c820efe146fa3b0-320.webp 320w, /images/generated/83720c820efe146fa3b0-640.webp 640w, /images/generated/83720c820efe146fa3b0-960.webp 960w",
+        "width": 640,
+        "height": 427
+      }
+    }
+  ]
+}

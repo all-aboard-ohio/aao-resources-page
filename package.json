@@ -1,18 +1,27 @@
 {
-  "name": "your-project-name",
+  "name": "aao-resources-page",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "sync": "node scripts/fetch-wix-resources.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "build": "npm run sync && npm run build:static",
+    "build:static": "npm run images && vite build && vite build --ssr src/entry-server.jsx --outDir .server && node scripts/render-pages.mjs && node scripts/check-build.mjs",
+    "pretest": "vite build --ssr src/entry-server.jsx --outDir .server --mode test",
+    "test": "node --test scripts/*.test.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "node scripts/serve.mjs"
   },
   "dependencies": {
+    "@wix/data": "1.0.544",
+    "@wix/sdk": "1.21.18",
     "lucide-react": "^1.14.0",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "ricos-schema": "^10.102.0",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
