@@ -260,6 +260,7 @@ test('unknown paths render not-found content and the shared notification is used
 
 test('homepage preserves the reference category tabs, lead story and smaller-resource row', () => {
   const html = render('/', null);
+  assert.match(html, /<h1>Tools for the Track Ahead<\/h1>/);
   for (const snippet of ['role="tablist"', 'aria-label="Resource categories"', 'role="tabpanel"', 'lead-resource', 'small-resource-grid', 'footer-about', 'footer-brand', 'footer-contact']) assert(html.includes(snippet), snippet);
   assert.equal((html.match(/aria-selected="true"/g) || []).length, 1);
   assert(!html.includes('page-intro'));
@@ -270,6 +271,17 @@ test('resource presentation keeps the blog title band without the homepage navig
   assert.match(html, /resource-title-band/);
   assert.match(html, /site-header compact/);
   assert(!html.includes('desktop-nav'));
+});
+
+test('resource detail pages include the blog-style mission and donate card beside downloads', () => {
+  const html = render('/analysis/ohio-runs-on-rail-book--84a1aa95-ecc9-4979-a528-c777cd95e09f/', null);
+  assert.match(html, /class="resource-detail-layout"/);
+  assert.match(html, /class="donate-box" aria-labelledby="donate-box-title"/);
+  assert.match(html, /<h2 id="donate-box-title">Our Mission<\/h2>/);
+  assert.match(html, /Your support helps us share resources for better passenger rail and transit across the Midwest\./);
+  assert.match(html, /href="https:\/\/www\.allaboardohio\.org\/donate" target="_blank"/);
+  assert.match(html, /class="donate-box-button"[^>]*>DONATE<svg/);
+  assert.match(html, /class="resource-quick-link"/);
 });
 
 test('resource headings follow the selected type and CMS thumbnails are rendered', () => {

@@ -134,7 +134,7 @@ function Home() {
     buttons[next].focus();
   }
   return <>
-    <div className="library-page content-width"><div className="library-page-title"><h1>Resources</h1><p>Research, tools, and information from All Aboard Ohio.</p></div>
+    <div className="library-page content-width"><div className="library-page-title"><h1>Tools for the Track Ahead</h1><p>Research, tools, and information from All Aboard Ohio.</p></div>
       <div className="library-toolbar"><form className="search-field" role="search" onSubmit={event => event.preventDefault()}><Search size={20} aria-hidden="true" /><label className="sr-only" htmlFor="resource-search">Search resources</label><input id="resource-search" type="search" placeholder="Search resources" value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" title="Clear search" aria-label="Clear search" onClick={() => setQuery('')}><X size={17} /></button>}</form><label className="sort-field">Sort by<select value={sort} onChange={event => setSort(event.target.value)}><option value="featured">Featured first</option><option value="title">Title A-Z</option><option value="recent">Recently updated</option></select></label></div>
       <section id="browse" className="latest-section" aria-labelledby="browse-heading"><h2 id="browse-heading">{type ? `${type} Resources` : 'Resources'}</h2><div className="latest-layout">
         <div className="category-tabs" role="tablist" aria-label="Resource categories">{['', ...types].map((value, index) => <button key={value} type="button" role="tab" id={`category-${slugify(value || 'all')}`} aria-controls="resource-panel" aria-selected={type === value} tabIndex={type === value ? 0 : -1} onClick={() => chooseType(value)} onKeyDown={event => navigateCategories(event, index)}><span>{value || 'All'}</span><ChevronRight size={25} aria-hidden="true" /></button>)}</div>
@@ -154,6 +154,14 @@ function Home() {
 function ResourceQuickLinks({ resource }) {
   if (!resource.attachments.length && !resource.externalLinks.length) return null;
   return <nav className="resource-quick-links" aria-label="Resource downloads and external links">{resource.attachments.map(item => <ExternalLinkAnchor key={item.url} href={item.url} className="resource-quick-link"><FileText size={18} aria-hidden="true" /><span>Download {item.name}</span></ExternalLinkAnchor>)}{resource.externalLinks.map(item => <ExternalLinkAnchor key={item.url} href={item.url} className="resource-quick-link"><span>Visit {item.name}</span></ExternalLinkAnchor>)}</nav>;
+}
+
+function DonateBox() {
+  return <aside className="donate-box" aria-labelledby="donate-box-title">
+    <h2 id="donate-box-title">Our Mission</h2>
+    <p>Your support helps us share resources for better passenger rail and transit across the Midwest.</p>
+    <a className="donate-box-button" href={`${MAIN_SITE}/donate`} target="_blank" rel="noopener noreferrer">DONATE<ArrowRight size={17} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+  </aside>;
 }
 
 function CategoryPage({ category }) {
@@ -180,10 +188,17 @@ function CategoryPage({ category }) {
 
 function Detail({ resource }) {
   const related = snapshot.resources.filter(item => item.id !== resource.id).slice(0, 3);
-  return <><section className="resource-title-band"><div className="detail-width"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Resources</a></li><li><ChevronRight size={14} aria-hidden="true" /><a href={`/${resource.typeSlug}/`}>{resource.type}</a></li><li><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{resource.shortTitle}</span></li></ol></nav><div className="detail-top"><div><p className="eyebrow">{resource.type}</p><h1>{resource.title}</h1>{resource.summary && <p className="detail-summary">{resource.summary}</p>}<ResourceQuickLinks resource={resource} /></div><figure className="detail-preview"><Preview resource={resource} /></figure></div></div></section><div className="detail-width"><article className="resource-detail"><RichContent content={resource.content} />
-    {(resource.attachments.length > 0 || resource.externalLinks.length > 0) && <div className="resource-actions">{resource.attachments.length > 0 && <section aria-labelledby="download-heading"><h2 id="download-heading">Downloads</h2><ul>{resource.attachments.map(item => <li key={item.url}><ExternalLinkAnchor href={item.url} className="download-link"><FileText size={20} aria-hidden="true" />{item.name}</ExternalLinkAnchor></li>)}</ul></section>}{resource.externalLinks.length > 0 && <section aria-labelledby="external-heading"><h2 id="external-heading">External Resources</h2><ul>{resource.externalLinks.map(item => <li key={item.url}><ExternalLinkAnchor href={item.url}>{item.name}</ExternalLinkAnchor></li>)}</ul></section>}</div>}
-    {!resource.content.nodes.length && !resource.attachments.length && !resource.externalLinks.length && <p className="content-notice">Additional materials are not currently available for this resource.</p>}
-    <a href="/" className="back-to-library"><ArrowLeft size={17} aria-hidden="true" />Back to all resources</a></article>{related.length > 0 && <section className="related-resources" aria-labelledby="related-heading"><h2 id="related-heading">More From the Library</h2><ul>{related.map(item => <li key={item.id}><a href={item.path}><span><small>{item.type}</small>{item.shortTitle}</span><ArrowRight size={18} aria-hidden="true" /></a></li>)}</ul></section>}</div></>;
+  return <><section className="resource-title-band"><div className="detail-width"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Resources</a></li><li><ChevronRight size={14} aria-hidden="true" /><a href={`/${resource.typeSlug}/`}>{resource.type}</a></li><li><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{resource.shortTitle}</span></li></ol></nav><div className="detail-top"><div><p className="eyebrow">{resource.type}</p><h1>{resource.title}</h1>{resource.summary && <p className="detail-summary">{resource.summary}</p>}<ResourceQuickLinks resource={resource} /></div><figure className="detail-preview"><Preview resource={resource} /></figure></div></div></section><div className="detail-width">
+    <div className="resource-detail-layout">
+      <article className="resource-detail"><RichContent content={resource.content} />
+        {(resource.attachments.length > 0 || resource.externalLinks.length > 0) && <div className="resource-actions">{resource.attachments.length > 0 && <section aria-labelledby="download-heading"><h2 id="download-heading">Downloads</h2><ul>{resource.attachments.map(item => <li key={item.url}><ExternalLinkAnchor href={item.url} className="download-link"><FileText size={20} aria-hidden="true" />{item.name}</ExternalLinkAnchor></li>)}</ul></section>}{resource.externalLinks.length > 0 && <section aria-labelledby="external-heading"><h2 id="external-heading">External Resources</h2><ul>{resource.externalLinks.map(item => <li key={item.url}><ExternalLinkAnchor href={item.url}>{item.name}</ExternalLinkAnchor></li>)}</ul></section>}</div>}
+        {!resource.content.nodes.length && !resource.attachments.length && !resource.externalLinks.length && <p className="content-notice">Additional materials are not currently available for this resource.</p>}
+        <a href="/" className="back-to-library"><ArrowLeft size={17} aria-hidden="true" />Back to all resources</a>
+      </article>
+      <DonateBox />
+    </div>
+    {related.length > 0 && <section className="related-resources" aria-labelledby="related-heading"><h2 id="related-heading">More From the Library</h2><ul>{related.map(item => <li key={item.id}><a href={item.path}><span><small>{item.type}</small>{item.shortTitle}</span><ArrowRight size={18} aria-hidden="true" /></a></li>)}</ul></section>}
+  </div></>;
 }
 
 export default function App({ path = typeof window === 'undefined' ? '/' : window.location.pathname }) {
