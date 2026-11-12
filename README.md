@@ -81,9 +81,8 @@ Local static verification: `npm test`, `npm run lint`, `npm run build`, then
 The approved `/privacy/` policy and footer Privacy settings control are included.
 Wix pageview integration is enabled after AAO's settings review, but tracking is
 off for every visitor until explicit acceptance. The accepted scope is resource-site
-page views in Wix Analytics, without linking identities to the main site. See
-`docs/wix-analytics.md` for the production verification checklist and provider settings.
-No optional tracker loads merely because a notice is dismissed.
+page views in Wix Analytics, without linking identities to the main site. No optional
+tracker loads merely because a notice is dismissed.
 
 ## Category Pages
 
