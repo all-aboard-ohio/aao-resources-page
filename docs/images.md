@@ -1,6 +1,6 @@
 # Join Section Photo
 
-Add the approved AAO community photo in this directory with one of these names:
+Add the approved AAO community photo under `public/images/` using one of these names:
 
 - `join-aao.jpg` (preferred)
 - `join-aao.jpeg`
@@ -15,8 +15,9 @@ Run `npm run build:static` after adding the photo, or restart the development
 server. Builds automatically detect the file. A neutral image placeholder is
 shown until an approved photo exists. If several formats exist, JPG is preferred.
 
-The image description is in `JoinAllAboardOhio` in `src/App.jsx`; update it to
-describe the actual photo when supplied.
+Update the image description in `JoinAllAboardOhio` to describe the approved photo.
+Membership and supporter-list links currently use the AAO Join page; replace the
+supporter-list destination when its dedicated URL is ready.
 
-Membership and supporter-list links currently both use the AAO Join page, as
-requested. Replace the supporter-list destination when its dedicated URL is ready.
+These instructions belong in `docs/`, not `public/`: Vite copies public files into
+the deployed site. Keep notes, original captures, source files and caches out of it.

@@ -5,14 +5,69 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
 import { createImageVariants } from './optimize-images.mjs';
-import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent } from './resource-data.mjs';
+import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent, publishedResourceRoutes } from './resource-data.mjs';
 import { normalizeWixRichContent } from './wix-rich-content.mjs';
 import { renderRichContent, render } from '../.server/entry-server.js';
 import { getCategoryDirectory, resourceInCategory } from '../src/data/categories.js';
+import privacyConfig from '../src/data/privacy-config.js';
+import { CONSENT_DURATION, consentRecord, parseConsent, trackingConfigured, mayLoadTracking, loadWixSiteScript, WIX_SCRIPT_URL } from '../src/utils/privacy.mjs';
 
 const text = (value, decorations = []) => ({ type: 'TEXT', textData: { text: value, decorations } });
 const paragraph = value => ({ type: 'PARAGRAPH', nodes: [text(value)] });
 const renderNodes = nodes => renderRichContent(publicRichContent(normalizeWixRichContent({ nodes })));
+
+test('Wix tracking is disabled until privacy and platform reviews are complete', () => {
+  const consent = { analytics: true };
+  assert.equal(mayLoadTracking({ ...privacyConfig, enabled: false }, consent, privacyConfig.hostname), false);
+  for (const missing of ['enabled', 'privacyReviewed', 'wixSettingsReviewed']) {
+    const config = { ...privacyConfig, enabled: true, privacyReviewed: true, wixSettingsReviewed: true, [missing]: false };
+    assert.equal(mayLoadTracking(config, consent, config.hostname), false);
+  }
+});
+
+test('consent requires an explicit choice and expires after six months or a policy change', () => {
+  const now = 1000000000000;
+  assert.equal(parseConsent('', privacyConfig, now), null);
+  assert.equal(parseConsent('bad json', privacyConfig, now), null);
+  assert.equal(parseConsent(consentRecord(false, privacyConfig, now), privacyConfig, now).analytics, false);
+  assert.equal(parseConsent(consentRecord(true, privacyConfig, now), privacyConfig, now + CONSENT_DURATION), null);
+  assert.equal(parseConsent(consentRecord(true, { ...privacyConfig, policyVersion: privacyConfig.policyVersion + 1 }, now), privacyConfig, now), null);
+});
+
+test('Wix script is opt-in only, production-only, GPC-aware and never inserted twice', () => {
+  const config = { ...privacyConfig, enabled: true, privacyReviewed: true, wixSettingsReviewed: true };
+  const scripts = [];
+  const environment = {
+    location: { hostname: config.hostname }, navigator: { globalPrivacyControl: false },
+    document: {
+      getElementById: id => scripts.find(script => script.id === id),
+      createElement: () => ({ setAttribute(name, value) { this[name] = value; } }),
+      head: { appendChild(script) { scripts.push(script); } },
+    },
+  };
+  assert.equal(loadWixSiteScript(environment, config, null), false);
+  assert.equal(loadWixSiteScript(environment, config, { analytics: false }), false);
+  environment.navigator.globalPrivacyControl = true;
+  assert.equal(loadWixSiteScript(environment, config, { analytics: true }), false);
+  environment.navigator.globalPrivacyControl = false;
+  environment.location.hostname = 'localhost';
+  assert.equal(loadWixSiteScript(environment, config, { analytics: true }), false);
+  environment.location.hostname = config.hostname;
+  assert.equal(loadWixSiteScript(environment, config, { analytics: true }), true);
+  assert.equal(scripts[0].src, WIX_SCRIPT_URL);
+  assert.equal(scripts[0]['data-client-id'], config.clientId);
+  assert.equal(loadWixSiteScript(environment, config, { analytics: true }), false);
+});
+
+test('AAO privacy policy uses public-facing language without injecting a tracker', () => {
+  const privacy = render('/privacy/', null);
+  assert.match(privacy, /How We Use Information/);
+  assert.match(privacy, trackingConfigured(privacyConfig) ? /enabled only after you choose Allow analytics/ : /currently switched off/);
+  for (const implementationDetail of ['Wix', 'GitHub Pages', 'CMS', 'visitor token', 'cross-subdomain identity bridge', 'Draft for All Aboard Ohio review']) assert(!privacy.includes(implementationDetail), implementationDetail);
+  assert.match(render('/', null), /Privacy settings/);
+  assert(!privacy.includes('id="wix-site-script"'));
+  assert.equal(render('/', null).includes('class="privacy-notice"'), trackingConfigured(privacyConfig));
+});
 
 test('rendering regressions use a deterministic fixture instead of live editorial content', () => {
   assert.match(render('/', null), /Deterministic blog fixture, not live Wix content\./);
@@ -44,6 +99,17 @@ test('header has the source logo and Resources in place of More, with no login',
   assert(!html.includes('<summary>More</summary>'));
   assert(!html.includes('Log In'));
   assert.match(html, /src="\/header-logo.svg"/);
+});
+
+test('compact resource and privacy headers retain the shared mobile navigation', () => {
+  for (const path of ['/privacy/', '/analysis/ohio-runs-on-rail-book--84a1aa95-ecc9-4979-a528-c777cd95e09f/']) {
+    const html = render(path, null);
+    assert.match(html, /site-header compact/);
+    assert.equal((html.match(/class="mobile-nav"/g) || []).length, 1);
+    assert.match(html, /aria-label="Mobile navigation"/);
+    assert.match(html, /aria-label="Open navigation menu"/);
+    assert(!html.includes('class="desktop-nav"'));
+  }
 });
 
 test('downloads and external destinations appear before the long article content and remain at the bottom', () => {
@@ -113,6 +179,15 @@ test('duplicate titles remain unique, and established paths survive title/catego
   const changed = normalizeResource({ _id: 'abc', title: 'New title' }, [{ id: 'cat', title: 'New type' }], { abc: first.path });
   assert.equal(changed.path, first.path);
   assert.throws(() => normalizeResource({ title: 'Missing ID' }, []));
+});
+
+test('public route manifest keeps active paths without exposing withdrawn titles', () => {
+  const previous = { active: '/analysis/original-title--active/', withdrawn: '/printables/retired-title--withdrawn/' };
+  const active = normalizeResource({ _id: 'active', title: 'Updated active title' }, [], previous);
+  const routes = publishedResourceRoutes([active]);
+  assert.deepEqual(routes, { active: previous.active });
+  assert(!JSON.stringify(routes).includes('retired-title'));
+  assert.deepEqual(publishedResourceRoutes([]), {});
 });
 
 test('renders paragraphs, H2/H3, bold, italic and external hyperlinks', () => {

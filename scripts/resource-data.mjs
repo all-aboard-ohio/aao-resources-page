@@ -1,5 +1,9 @@
 export const SITE_URL = 'https://resources.allaboardohio.org';
 
+export function publishedResourceRoutes(resources) {
+  return Object.fromEntries(resources.map(resource => [resource.id, resource.path]));
+}
+
 export function slugify(value) {
   return String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'resource';

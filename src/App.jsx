@@ -4,6 +4,9 @@ import snapshot from './data/resources.json';
 import RichContent, { ExternalLinkAnchor } from './components/RichContent.jsx';
 import { slugify } from '../scripts/resource-data.mjs';
 import { getCategoryDirectory, resourceInCategory } from './data/categories.js';
+import PrivacyControls from './components/PrivacyControls.jsx';
+import Privacy from './pages/Privacy.jsx';
+import { PREFERENCES_EVENT } from './utils/privacy.mjs';
 
 const MAIN_SITE = 'https://www.allaboardohio.org';
 const groups = [
@@ -21,8 +24,8 @@ function Header({ compact }) {
     {compact ? <a href="/" className="back-link"><ArrowLeft size={17} aria-hidden="true" />Back to Resources</a> : <>
       <nav className="desktop-nav" aria-label="Main navigation"><a href={`${MAIN_SITE}/`}>Home</a>{groups.map(group => <details className="nav-group" key={group.title}><summary>{group.title}</summary><ul>{group.links.map(([label, path]) => <li key={path}><a href={MAIN_SITE + path}>{label}</a></li>)}</ul></details>)}<a href={`${MAIN_SITE}/news`}>News</a><a href={`${MAIN_SITE}/shop`}>Shop</a><details className="nav-group resource-menu"><summary>Resources</summary><ul><li><a href="/">All resources</a></li>{categories.map(category => <li key={category.id}><a href={`/${category.slug}/`}>{category.title}</a></li>)}</ul></details></nav>
       <a href={`${MAIN_SITE}/donate`} className="donate-link">Donate<ArrowRight size={15} aria-hidden="true" /></a>
-      <details className="mobile-nav"><summary aria-label="Open navigation menu"><Menu size={25} aria-hidden="true" /></summary><nav aria-label="Mobile navigation"><a href={`${MAIN_SITE}/`}>Home</a>{groups.map(group => <details key={group.title}><summary>{group.title}</summary>{group.links.map(([label, path]) => <a key={path} href={MAIN_SITE + path}>{label}</a>)}</details>)}<a href={`${MAIN_SITE}/news`}>News</a><a href={`${MAIN_SITE}/shop`}>Shop</a><details><summary>Resources</summary><a href="/">All resources</a>{categories.map(category => <a href={`/${category.slug}/`} key={category.id}>{category.title}</a>)}</details></nav></details>
     </>}
+    <details className="mobile-nav"><summary aria-label="Open navigation menu"><Menu size={30} strokeWidth={2} aria-hidden="true" /></summary><nav aria-label="Mobile navigation"><a href={`${MAIN_SITE}/`}>Home</a>{groups.map(group => <details key={group.title}><summary>{group.title}</summary>{group.links.map(([label, path]) => <a key={path} href={MAIN_SITE + path}>{label}</a>)}</details>)}<a href={`${MAIN_SITE}/news`}>News</a><a href={`${MAIN_SITE}/shop`}>Shop</a><a href={`${MAIN_SITE}/donate`}>Donate</a><details><summary>Resources</summary><a href="/">All resources</a>{categories.map(category => <a href={`/${category.slug}/`} key={category.id}>{category.title}</a>)}</details></nav></details>
   </div></header>;
 }
 
@@ -46,7 +49,7 @@ function Footer() {
     <div className="footer-about"><p>All Aboard Ohio is a 501c-3 nonprofit with over 50 years of advocacy work, advocating for improved public transportation and passenger rail service in the United States</p><form role="search" aria-label="Footer resource search" action="/#browse" method="get"><label className="sr-only" htmlFor="footer-search">Search resources</label><input id="footer-search" type="search" name="q" placeholder="Enter search term" required /><button type="submit" title="Search resources" aria-label="Search resources"><Search size={18} aria-hidden="true" /></button></form></div>
     <div className="footer-brand"><Brand full /><p>&copy; {new Date().getFullYear()} by All Aboard Ohio</p></div>
     <div className="footer-contact"><h2>Get in Touch</h2><a href={`${MAIN_SITE}/contact`}>Contact us form</a><a href="mailto:info@allaboardohio.org">info@allaboardohio.org</a><address>3136 Kingsdale Center,<br />#112 Columbus, OH 43221</address><p>Federal Tax ID: 31-1066182</p><ul className="social-links" aria-label="All Aboard Ohio social media">{socials.map(([label, href, Icon]) => <li key={label}><a href={href} aria-label={`${label} (opens in a new tab)`} title={label} target="_blank" rel="noopener noreferrer">{Icon ? <Icon size={25} aria-hidden="true" /> : <span aria-hidden="true" className={label === 'X' ? 'x-brand' : 'social-image-placeholder'}>{label === 'X' ? 'X' : ''}</span>}</a></li>)}</ul></div>
-  </div></footer>;
+  </div><div className="footer-privacy"><a href="/privacy/">Privacy &amp; cookies</a><button onClick={() => window.dispatchEvent(new Event(PREFERENCES_EVENT))}>Privacy settings</button></div></footer>;
 }
 
 function Preview({ resource, featured = false, sizes = '(min-width: 1024px) 230px, (min-width: 768px) 25vw, 260px' }) {
@@ -190,5 +193,5 @@ export default function App({ path = typeof window === 'undefined' ? '/' : windo
   const resource = snapshot.resources.find(item => item.path === normalizedPath);
   const category = getCategoryDirectory(snapshot.resources).find(item => `/${item.slug}/` === normalizedPath);
   const home = normalizedPath === '/';
-  return <><a className="skip-link" href="#main">Skip to content</a><Header compact={!home && !category} /><Notification notice={notice} /><main id="main" className={home || category ? 'home-page' : undefined}>{resource ? <Detail resource={resource} /> : category ? <CategoryPage category={category} /> : home ? <Home /> : <section className="not-found content-width"><p className="eyebrow">404</p><h1>Resource Not Found</h1><p>This resource may have moved or is no longer published.</p><a className="action-link" href="/">Back to Resources<ArrowRight size={17} aria-hidden="true" /></a></section>}</main><Footer /></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Header compact={!home && !category} /><Notification notice={notice} /><main id="main" className={home || category ? 'home-page' : undefined}>{normalizedPath === '/privacy/' ? <Privacy /> : resource ? <Detail resource={resource} /> : category ? <CategoryPage category={category} /> : home ? <Home /> : <section className="not-found content-width"><p className="eyebrow">404</p><h1>Resource Not Found</h1><p>This resource may have moved or is no longer published.</p><a className="action-link" href="/">Back to Resources<ArrowRight size={17} aria-hidden="true" /></a></section>}</main><Footer /><PrivacyControls /></>;
 }

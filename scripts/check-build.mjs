@@ -1,12 +1,22 @@
 import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getCategoryDirectory } from '../src/data/categories.js';
+import privacyConfig from '../src/data/privacy-config.js';
+import { publishedResourceRoutes } from './resource-data.mjs';
 
 const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const snapshot = JSON.parse(await readFile(resolve(root, 'data/resources.json'), 'utf8'));
 const paths = new Set(snapshot.resources.map(resource => resource.path));
+const routes = JSON.parse(await readFile(resolve(root, 'data/routes.json'), 'utf8'));
+assert.deepEqual(routes, publishedResourceRoutes(snapshot.resources), 'Public routes include stale or unpublished resources');
+const publicHtml = new Set(['index.html', '404.html', 'privacy/index.html',
+  ...getCategoryDirectory(snapshot.resources).map(category => `${category.slug}/index.html`),
+  ...snapshot.resources.map(resource => `${resource.path.slice(1)}index.html`)]);
+const publicFiles = new Set(['.nojekyll', 'CNAME', 'robots.txt', 'sitemap.xml',
+  'header-logo.svg', 'header-stripes.svg', 'footer-logo.svg',
+  'data/resources.json', 'data/routes.json', 'data/notification.json']);
 for (const category of getCategoryDirectory(snapshot.resources)) {
   const html = await readFile(resolve(root, category.slug, 'index.html'), 'utf8');
   assert(html.includes('class="category-page content-width"'), 'Dedicated category page missing');
@@ -26,6 +36,11 @@ for (const item of [...snapshot.resources, ...(snapshot.blogPosts || [])]) {
 assert.equal(paths.size, snapshot.resources.length, 'Resource routes must be unique');
 assert(Array.isArray(snapshot.blogPosts) && snapshot.blogPosts.length <= 3, 'Expected up to three blog stories');
 const homepage = await readFile(resolve(root, 'index.html'), 'utf8');
+assert(!homepage.includes('id="wix-site-script"'), 'Tracking script must not load before consent');
+const privacyPage = await readFile(resolve(root, 'privacy/index.html'), 'utf8');
+assert(privacyPage.includes('How We Use Information'), 'Privacy policy is incomplete');
+if (!privacyConfig.privacyReviewed) assert(privacyPage.includes('content="noindex"'), 'Unreviewed privacy policy must remain noindex');
+else assert(!privacyPage.includes('content="noindex"'), 'Approved privacy policy should be indexable');
 for (const [index, post] of snapshot.blogPosts.entries()) {
   assert(/^https:\/\/www\.allaboardohio\.org\/posts\/[^/?#]+\/?$/.test(post.url), 'Invalid blog destination');
   assert(homepage.includes(post.url), 'Blog link missing from static HTML');
@@ -46,9 +61,21 @@ for (const field of ['"_owner"', '"_publishingStatus"', '"author"', '"refreshTok
 async function inspect(directory) {
   for (const name of await readdir(directory)) {
     const path = resolve(directory, name);
-    if ((await stat(path)).isDirectory()) await inspect(path);
-    else if (name.endsWith('.html')) {
+    const publicPath = relative(root, path).replaceAll('\\', '/');
+    assert(!/(^|\/)(docs|scripts|src|node_modules|\.cache|\.server|\.git)(\/|$)/.test(publicPath), `Internal directory in public build: ${publicPath}`);
+    assert(!/(^|\/)\.env($|\.)|\.(md|map|pem|key|log|ts|jsx|mjs)$/i.test(publicPath), `Internal file in public build: ${publicPath}`);
+    if ((await stat(path)).isDirectory()) { await inspect(path); continue; }
+    const approved = publicHtml.has(publicPath) || publicFiles.has(publicPath)
+      || /^assets\/[^/]+\.(js|css)$/.test(publicPath)
+      || /^images\/generated\/[a-f0-9]{20}-(320|640|960)\.webp$/.test(publicPath)
+      || /^images\/join-aao\.(jpg|jpeg|webp|png)$/.test(publicPath);
+    assert(approved, `Unexpected file in public build: ${publicPath}`);
+    if (name.endsWith('.html')) {
       const html = await readFile(path, 'utf8');
+      assert(html.includes('lang="en"'), 'Document language missing');
+      assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) || []).length, 1, 'Expected one page-level heading');
+      assert(html.includes('<title>') && html.includes('<meta name="description"'), 'Page SEO title or description missing');
+      assert(html.includes('rel="canonical"') && html.includes('property="og:title"'), 'Canonical/social metadata missing');
       for (const match of html.matchAll(/href="(\/[^"#?]*)"/g)) {
         const href = match[1];
         if (href.startsWith('//')) continue;
@@ -57,6 +84,10 @@ async function inspect(directory) {
     } else if (name.endsWith('.js')) {
       const script = await readFile(path, 'utf8');
       assert(!/wixapis\.com|generateVisitorTokens|OAuthStrategy/.test(script), 'Wix API code found in browser bundle');
+      assert(!/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|github_pat_[A-Za-z0-9_]{40,}|gh[pousr]_[A-Za-z0-9]{30,}/.test(script), 'Possible private credential in browser bundle');
+    } else if (name.endsWith('.svg')) {
+      const svg = await readFile(path, 'utf8');
+      assert(!/<script\b|\bon[a-z]+\s*=/i.test(svg), 'Executable code in a public vector asset');
     }
   }
 }

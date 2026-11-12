@@ -3,7 +3,7 @@ import { items } from '@wix/data';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { normalizeBlogPost, normalizeResource } from './resource-data.mjs';
+import { normalizeBlogPost, normalizeResource, publishedResourceRoutes } from './resource-data.mjs';
 import { normalizeWixRichContent } from './wix-rich-content.mjs';
 
 const root = new URL('../', import.meta.url);
@@ -68,7 +68,7 @@ async function main() {
   if (new Set(blogPosts.map(post => post.id)).size !== blogPosts.length) throw new Error('Duplicate blog post IDs');
   const hash = createHash('sha256').update(JSON.stringify({ resources, blogPosts })).digest('hex');
   const snapshot = { version: 1, hash, resources, blogPosts };
-  const nextRoutes = { ...routes, ...Object.fromEntries(resources.map(resource => [resource.id, resource.path])) };
+  const nextRoutes = publishedResourceRoutes(resources);
   for (const directory of ['src/data/', 'public/data/']) await mkdir(new URL(directory, root), { recursive: true });
   for (const directory of ['src/data/', 'public/data/']) {
     await writeFile(new URL(`${directory}resources.json`, root), JSON.stringify(snapshot, null, 2) + '\n');

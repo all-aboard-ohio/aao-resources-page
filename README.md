@@ -11,7 +11,8 @@ Built with React, Vite, Tailwind CSS, the Wix SDK, and Sharp image optimization.
 production domain; GitHub Pages and DNS must be configured before it is live.
 
 GitHub Actions refreshes public CMS data approximately every 15 minutes. Visitors
-receive static pages and locally optimized images, with no browser-side Wix calls.
+receive static pages and locally optimized images, with no browser-side CMS calls.
+Optional analytics sends directly from consenting browsers to the analytics service.
 
 ## Getting Started
 
@@ -73,6 +74,15 @@ deployment. A failed fetch, image optimization, test or build prevents deploymen
 Local static verification: `npm test`, `npm run lint`, `npm run build`, then
 `npm run preview`. Set `PORT` if 4174 is already occupied.
 
+## Privacy And Analytics
+
+The approved `/privacy/` policy and footer Privacy settings control are included.
+Wix pageview integration is enabled after AAO's settings review, but tracking is
+off for every visitor until explicit acceptance. The accepted scope is resource-site
+page views in Wix Analytics, without linking identities to the main site. See
+`docs/wix-analytics.md` for the production verification checklist and provider settings.
+No optional tracker loads merely because a notice is dismissed.
+
 ## Category Pages
 
 Categories have dedicated static pages such as `/analysis/`, `/printables/`,
@@ -83,8 +93,8 @@ link to these pages. Resources appear under all their assigned categories.
 `src/data/categories.js` retains the verified Wix category IDs so empty categories
 remain linkable without exposing draft records. New categories discovered through
 published resource references are included automatically; register a category here
-if it must exist before it has any published resources. Empty Printables currently
-reflects the fiscal-analysis record being in draft.
+if it must exist before it has any published resources. Sparse categories show
+a coming-soon placeholder without displaying draft content.
 
 ## Data Sources
 
@@ -94,9 +104,38 @@ reflects the fiscal-analysis record being in draft.
 
 `npm run sync` exports both sources into the public JSON snapshot. The homepage
 places the blog stories between the action and join sections. GitHub Actions
-performs the sync on its 15-minute schedule; browsers make no Wix API requests.
+performs the sync on its 15-minute schedule; browsers make no Wix CMS requests.
+Optional analytics runs only after a visitor explicitly accepts it.
 Blog content changes are included in snapshot change detection. A failed blog
 fetch stops deployment rather than replacing the live site with partial data.
+
+## Published Artifacts
+
+Only `dist/` is uploaded to Pages. Build checks reject documentation, test fixtures,
+source maps, source files, environment files, caches and unexpected assets. Photo
+instructions are in `docs/images.md`, not the public asset directory.
+
+The public route manifest contains published resources only, so withdrawn titles
+are not retained there. Paths remain stable while resources are published. If a
+withdrawn resource is renamed and later republished, preserving its old path would
+require a CMS-managed permanent slug or a separately protected route history;
+the site does not publish private route history for that purpose.
+
+Repository visibility is separate from Pages: notes and test source remain visible
+to anyone who has access to the repository, even though they are not web assets.
+
+## Accessibility And SEO
+
+Pages use semantic headings and landmarks, labeled navigation and controls, ARIA
+for tabs/status/privacy controls, keyboard interactions, skip links and alternative
+text for content images. Automated accessibility scans supplement rather than
+replace manual accessibility review.
+
+The build generates complete static HTML, individual titles/descriptions,
+canonical and social-sharing metadata, `sitemap.xml`, `robots.txt` and a noindex
+404 page. The sitemap covers indexable home, category, resource and privacy pages.
+After deploying the custom domain, submit its sitemap in Google Search Console
+and Bing Webmaster Tools. Metadata and a sitemap do not guarantee search rankings.
 
 ## Contributing
 
