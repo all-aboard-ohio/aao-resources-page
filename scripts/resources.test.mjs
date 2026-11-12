@@ -16,13 +16,23 @@ const text = (value, decorations = []) => ({ type: 'TEXT', textData: { text: val
 const paragraph = value => ({ type: 'PARAGRAPH', nodes: [text(value)] });
 const renderNodes = nodes => renderRichContent(publicRichContent(normalizeWixRichContent({ nodes })));
 
-test('Wix tracking is disabled until privacy and platform reviews are complete', () => {
+test('Wix tracking requires consent and completed privacy/platform reviews', () => {
   const consent = { analytics: true };
-  assert.equal(mayLoadTracking({ ...privacyConfig, enabled: false }, consent, privacyConfig.hostname), false);
+  assert.equal(trackingConfigured(privacyConfig), true);
+  assert.equal(mayLoadTracking(privacyConfig, null, privacyConfig.hostname), false);
+  assert.equal(mayLoadTracking(privacyConfig, consent, privacyConfig.hostname), true);
   for (const missing of ['enabled', 'privacyReviewed', 'wixSettingsReviewed']) {
     const config = { ...privacyConfig, enabled: true, privacyReviewed: true, wixSettingsReviewed: true, [missing]: false };
     assert.equal(mayLoadTracking(config, consent, config.hostname), false);
   }
+});
+
+test('consent is governed by the site and never written through Wix policy APIs', async () => {
+  const controls = await readFile(new URL('../src/components/PrivacyControls.jsx', import.meta.url), 'utf8');
+  assert.doesNotMatch(controls, /consentPolicyManager|setConsentPolicy/);
+  const html = render('/', null);
+  assert.match(html, /class="privacy-notice"/);
+  assert.match(html, /Allow analytics<\/button>/);
 });
 
 test('consent requires an explicit choice and expires after six months or a policy change', () => {
@@ -62,7 +72,7 @@ test('Wix script is opt-in only, production-only, GPC-aware and never inserted t
 test('AAO privacy policy uses public-facing language without injecting a tracker', () => {
   const privacy = render('/privacy/', null);
   assert.match(privacy, /How We Use Information/);
-  assert.match(privacy, trackingConfigured(privacyConfig) ? /enabled only after you choose Allow analytics/ : /currently switched off/);
+  assert.match(privacy, /enabled only after you choose Allow analytics/);
   for (const implementationDetail of ['Wix', 'GitHub Pages', 'CMS', 'visitor token', 'cross-subdomain identity bridge', 'Draft for All Aboard Ohio review']) assert(!privacy.includes(implementationDetail), implementationDetail);
   assert.match(render('/', null), /Privacy settings/);
   assert(!privacy.includes('id="wix-site-script"'));

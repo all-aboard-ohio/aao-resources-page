@@ -29,8 +29,8 @@ jobs:
     outputs:
       deploy: ${{ steps.decision.outputs.deploy }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
@@ -38,7 +38,7 @@ jobs:
       - name: Find the previous successful Pages deployment
         id: previous
         if: ${{ !inputs.bootstrap_routes }}
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const deployments = await github.paginate(github.rest.repos.listDeployments, {
@@ -76,7 +76,7 @@ jobs:
         run: npm run lint
       - name: Cache optimized image variants
         if: steps.decision.outputs.deploy == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .cache/thumbnails
           key: wix-images-${{ runner.os }}-${{ hashFiles('package-lock.json', 'scripts/optimize-images.mjs') }}-${{ steps.snapshot.outputs.hash }}
@@ -87,7 +87,7 @@ jobs:
       - name: Generate and verify static pages
         if: steps.decision.outputs.deploy == 'true'
         run: npm run build:static
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         if: steps.decision.outputs.deploy == 'true'
         with:
           path: dist
@@ -102,4 +102,4 @@ jobs:
     needs: build
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

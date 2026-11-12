@@ -79,10 +79,10 @@ Local static verification: `npm test`, `npm run lint`, `npm run build`, then
 ## Privacy And Analytics
 
 The approved `/privacy/` policy and footer Privacy settings control are included.
-Wix pageview integration is enabled after AAO's settings review, but tracking is
-off for every visitor until explicit acceptance. The accepted scope is resource-site
-page views in Wix Analytics, without linking identities to the main site. No optional
-tracker loads merely because a notice is dismissed.
+Wix pageview integration loads only after a visitor explicitly opts in through the
+resource site's privacy controls. Rejection, an absent or expired choice, and
+Global Privacy Control prevent the Wix script from loading. Consent is stored on
+this site; the integration does not write consent to Wix's consent-policy API.
 
 ## Category Pages
 

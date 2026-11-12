@@ -13,12 +13,8 @@ function removeStoredValue(key) {
 
 function stopTracking() {
   if (!document.getElementById('wix-site-script')) return;
-  function finish() {
-    removeStoredValue(`wixSiteScript:${config.clientId}`);
-    window.location.reload();
-  }
-  if (window.consentPolicyManager) window.consentPolicyManager.setConsentPolicy({ analytics: false, advertising: false, dataToThirdParty: false, functional: false }, finish, finish);
-  else finish();
+  removeStoredValue(`wixSiteScript:${config.clientId}`);
+  window.location.reload();
 }
 
 function subscribe(callback) {
@@ -43,7 +39,7 @@ export default function PrivacyControls() {
   const closeButton = useRef(null);
   const configured = trackingConfigured(config);
   const optOutSignal = typeof navigator !== 'undefined' && navigator.globalPrivacyControl === true;
-  const showNotice = settingsOpen || (configured && !choice);
+  const showNotice = settingsOpen || ((configured || config.enabled === false) && !choice);
 
   useEffect(() => {
     function open() { returnFocus.current = document.activeElement; setSettingsOpen(true); }
@@ -57,20 +53,7 @@ export default function PrivacyControls() {
 
   useEffect(() => {
     if (!mayLoadTracking(config, parseConsent(raw, config), window.location.hostname, navigator.globalPrivacyControl)) return;
-    function applyWixPolicy() {
-      const manager = window.consentPolicyManager;
-      if (!manager) return;
-      const policy = manager.getCurrentConsentPolicy()?.policy;
-      if (policy?.analytics === true && policy.advertising === false && policy.dataToThirdParty === false && policy.functional === false) return;
-      manager.setConsentPolicy({ analytics: true, advertising: false, dataToThirdParty: false, functional: false }, () => window.location.reload(), () => {
-        removeStoredValue(CONSENT_KEY);
-        window.location.reload();
-      });
-    }
-    window.addEventListener('consentPolicyManagerReady', applyWixPolicy);
     loadWixSiteScript(window, config, parseConsent(raw, config));
-    if (window.consentPolicyManager) applyWixPolicy();
-    return () => window.removeEventListener('consentPolicyManagerReady', applyWixPolicy);
   }, [raw]);
 
   function save(analytics) {
