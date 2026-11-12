@@ -110,9 +110,6 @@
 .table-scroll td p, .table-scroll th p { margin-bottom: 0; }
 .rich-video iframe, .rich-video video { width: 100%; aspect-ratio: 16/9; border: 0; background: #10191e; }
 .video-play { aspect-ratio: 16/9; width: 100%; @apply bg-aao-dark-blue text-white; display: flex; align-items: center; justify-content: center; gap: 12px; border: 0; padding: 20px; }
-.notification { background: #edf3f6; padding: 12px 24px; display: flex; justify-content: center; align-items: center; gap: 14px; }
-.notification p { margin: 0; font-size: 12px; }
-.notification button { border: 0; background: transparent; padding: 7px; }
 .content-notice { font-size: 13px; color: #596873; padding-block: 10px; }
 .not-found { min-height: 55vh; padding-block: 70px; }
 .not-found h1 { font-size: 34px; }

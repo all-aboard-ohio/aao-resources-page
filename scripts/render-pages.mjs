@@ -8,7 +8,6 @@ import privacyConfig from '../src/data/privacy-config.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const snapshot = JSON.parse(await readFile(resolve(root, 'src/data/resources.json'), 'utf8'));
-const notice = JSON.parse(await readFile(resolve(root, 'public/data/notification.json'), 'utf8'));
 const template = await readFile(resolve(root, 'dist/index.html'), 'utf8');
 const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 const pages = [
@@ -21,10 +20,9 @@ const pages = [
 for (const page of pages) {
   const canonical = SITE_URL + page.path;
   const metadata = `<meta name="description" content="${escape(page.description)}"><link rel="canonical" href="${escape(canonical)}"><meta property="og:title" content="${escape(page.title)}"><meta property="og:description" content="${escape(page.description)}"><meta property="og:type" content="website"><meta property="og:url" content="${escape(canonical)}"><meta name="twitter:card" content="summary">${page.notFound ? '<meta name="robots" content="noindex">' : ''}`;
-  const noticeJson = JSON.stringify(notice).replace(/</g, '\\u003c');
   const html = template.replace(/<title>.*?<\/title>/, () => `<title>${escape(page.title)}</title>`)
     .replace('</head>', () => `${metadata}${page.noindex ? '<meta name="robots" content="noindex">' : ''}</head>`)
-    .replace('<div id="root"></div>', () => `<div id="root">${render(page.path, notice)}</div><script type="application/json" id="site-notice">${noticeJson}</script>`);
+    .replace('<div id="root"></div>', () => `<div id="root">${render(page.path)}</div>`);
   const destination = resolve(root, 'dist', page.notFound ? '404.html' : `.${page.path}index.html`);
   if (relative(resolve(root, 'dist'), destination).startsWith('..')) throw new Error('Invalid generated path');
   await mkdir(dirname(destination), { recursive: true });

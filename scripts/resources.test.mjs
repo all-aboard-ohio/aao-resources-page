@@ -251,10 +251,11 @@ test('escapes text, drops unsafe embeds, and never exposes private media URLs', 
   assert.match(html, /&lt;script&gt;/);
 });
 
-test('unknown paths render not-found content and notification is optional', () => {
+test('unknown paths render not-found content and the shared notification is used without its header', () => {
   assert.match(render('/not-a-resource/', null), /Resource Not Found/);
-  assert(!render('/', null).includes('class="notification"'));
-  assert.match(render('/', { enabled: true, message: 'A rail announcement' }), /A rail announcement/);
+  const homepage = render('/', null);
+  assert.match(homepage, /<aao-notification config-url="https:\/\/raw\.githubusercontent\.com\/all-aboard-ohio\/aao-lab-components\/main\/banner\.json" mode="standard"><\/aao-notification>/);
+  assert(!homepage.includes('aao-site-header'));
 });
 
 test('homepage preserves the reference category tabs, lead story and smaller-resource row', () => {

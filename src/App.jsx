@@ -1,5 +1,5 @@
 import { useState, useSyncExternalStore } from 'react';
-import { ArrowLeft, ArrowRight, AtSign, Bell, CalendarDays, ChartNoAxesCombined, ChevronRight, ExternalLink, FileText, Files, Image, Landmark, Menu, Search, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, AtSign, CalendarDays, ChartNoAxesCombined, ChevronRight, ExternalLink, FileText, Files, Image, Landmark, Menu, Search, X } from 'lucide-react';
 import snapshot from './data/resources.json';
 import RichContent, { ExternalLinkAnchor } from './components/RichContent.jsx';
 import { slugify } from '../scripts/resource-data.mjs';
@@ -29,10 +29,8 @@ function Header({ compact }) {
   </div></header>;
 }
 
-function Notification({ notice }) {
-  const [dismissed, setDismissed] = useState(false);
-  if (!notice?.enabled || !notice.message || dismissed) return null;
-  return <aside className="notification" aria-label="All Aboard Ohio announcement"><Bell size={18} aria-hidden="true" /><p>{notice.message} {notice.url && <ExternalLinkAnchor href={notice.url}>{notice.linkText || 'Read more'}</ExternalLinkAnchor>}</p><button aria-label="Dismiss announcement" onClick={() => setDismissed(true)}><X size={18} /></button></aside>;
+function Notification() {
+  return <aao-notification config-url="https://raw.githubusercontent.com/all-aboard-ohio/aao-lab-components/main/banner.json" mode="standard" />;
 }
 
 function Footer() {
@@ -188,10 +186,10 @@ function Detail({ resource }) {
     <a href="/" className="back-to-library"><ArrowLeft size={17} aria-hidden="true" />Back to all resources</a></article>{related.length > 0 && <section className="related-resources" aria-labelledby="related-heading"><h2 id="related-heading">More From the Library</h2><ul>{related.map(item => <li key={item.id}><a href={item.path}><span><small>{item.type}</small>{item.shortTitle}</span><ArrowRight size={18} aria-hidden="true" /></a></li>)}</ul></section>}</div></>;
 }
 
-export default function App({ path = typeof window === 'undefined' ? '/' : window.location.pathname, notice = null }) {
+export default function App({ path = typeof window === 'undefined' ? '/' : window.location.pathname }) {
   const normalizedPath = path.endsWith('/') ? path : `${path}/`;
   const resource = snapshot.resources.find(item => item.path === normalizedPath);
   const category = getCategoryDirectory(snapshot.resources).find(item => `/${item.slug}/` === normalizedPath);
   const home = normalizedPath === '/';
-  return <><a className="skip-link" href="#main">Skip to content</a><Header compact={!home && !category} /><Notification notice={notice} /><main id="main" className={home || category ? 'home-page' : undefined}>{normalizedPath === '/privacy/' ? <Privacy /> : resource ? <Detail resource={resource} /> : category ? <CategoryPage category={category} /> : home ? <Home /> : <section className="not-found content-width"><p className="eyebrow">404</p><h1>Resource Not Found</h1><p>This resource may have moved or is no longer published.</p><a className="action-link" href="/">Back to Resources<ArrowRight size={17} aria-hidden="true" /></a></section>}</main><Footer /><PrivacyControls /></>;
+  return <><a className="skip-link" href="#main">Skip to content</a><Header compact={!home && !category} /><Notification /><main id="main" className={home || category ? 'home-page' : undefined}>{normalizedPath === '/privacy/' ? <Privacy /> : resource ? <Detail resource={resource} /> : category ? <CategoryPage category={category} /> : home ? <Home /> : <section className="not-found content-width"><p className="eyebrow">404</p><h1>Resource Not Found</h1><p>This resource may have moved or is no longer published.</p><a className="action-link" href="/">Back to Resources<ArrowRight size={17} aria-hidden="true" /></a></section>}</main><Footer /><PrivacyControls /></>;
 }

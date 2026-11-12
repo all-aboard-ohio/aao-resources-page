@@ -6,7 +6,7 @@ import App from './App.jsx'
 const root = document.getElementById('root');
 const app = (
   <StrictMode>
-    <App notice={JSON.parse(document.getElementById('site-notice')?.textContent || 'null')} />
+    <App />
   </StrictMode>
 );
 if (root.hasChildNodes()) hydrateRoot(root, app);
