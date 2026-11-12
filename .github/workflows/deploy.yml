@@ -59,7 +59,7 @@ jobs:
         id: snapshot
         run: npm run sync
         env:
-          WIX_CLIENT_ID: ${{ vars.WIX_CLIENT_ID || '9559f2fe-3c4f-418d-97dc-fe3e6996d980' }}
+          WIX_CLIENT_ID: ${{ secrets.WIX_CLIENT_ID || '9559f2fe-3c4f-418d-97dc-fe3e6996d980' }}
           PREVIOUS_ROUTES_URL: ${{ steps.previous.outputs.routes_url }}
       - name: Decide whether a deployment is needed
         id: decision

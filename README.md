@@ -42,8 +42,10 @@ production builds always use the current public Wix export.
 | `WIX_CLIENT_ID` | No | Public Wix Headless client ID; defaults to the verified AAO client |
 | `PREVIOUS_ROUTES_URL` | No | Previous deployed route manifest, supplied automatically by Actions |
 
-No Wix secret is required for public resource/blog reads. Set optional variables
-in the shell or Actions configuration; do not expose secrets using `VITE_` names.
+No Wix credential is required for public resource/blog reads. The workflow accepts
+an optional `WIX_CLIENT_ID` repository secret and falls back to the public AAO
+client ID. Set local overrides in the shell; never expose actual secrets using
+`VITE_` names.
 
 ## Deployment
 
