@@ -4,6 +4,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
+import { renderSocialImage, readableColor, whiteContrast, socialDescription } from './social-images.mjs';
 import { createImageVariants } from './optimize-images.mjs';
 import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent, publishedResourceRoutes, resolveResourcePath, compareResources } from './resource-data.mjs';
 import { normalizeWixRichContent } from './wix-rich-content.mjs';
@@ -15,6 +16,55 @@ import { CONSENT_DURATION, consentRecord, parseConsent, trackingConfigured, mayL
 const text = (value, decorations = []) => ({ type: 'TEXT', textData: { text: value, decorations } });
 const paragraph = value => ({ type: 'PARAGRAPH', nodes: [text(value)] });
 const renderNodes = nodes => renderRichContent(publicRichContent(normalizeWixRichContent({ nodes })));
+
+test('social previews use readable sampled colors and bounded descriptions', () => {
+  for (const color of [[255, 255, 255], [230, 190, 100], [100, 160, 220], [1, 35, 69], [0, 0, 0]]) {
+    const hex = readableColor(color);
+    const rgb = [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16));
+    assert(whiteContrast(rgb) >= 4.5);
+  }
+  assert.equal(readableColor(null), '#012345');
+  assert.equal(socialDescription('  Rail\n tools ', ''), 'Rail tools');
+  assert(socialDescription('Passenger rail '.repeat(30), '').length <= 160);
+});
+
+test('resource and category share images render escaped long titles at 1200 by 630', async () => {
+  const logo = await readFile(new URL('../public/header-logo.svg', import.meta.url));
+  const thumbnail = await sharp({ create: { width: 640, height: 480, channels: 3, background: '#88ccff' } }).png().toBuffer();
+  for (const kind of ['resource', 'category']) {
+    const output = await renderSocialImage({ title: 'Research & Analysis <Ohio> "Passenger Rail" LongTitleWithoutAnySpacesForWrapping', kind, thumbnail, logo });
+    const metadata = await sharp(output).metadata();
+    assert.equal(metadata.width, 1200);
+    assert.equal(metadata.height, 630);
+    assert.equal(metadata.format, 'jpeg');
+    assert(output.length < 1000000);
+    const statistics = await sharp(output).stats();
+    assert(statistics.channels.some(channel => channel.stdev > 5));
+  }
+});
+
+test('resource social titles share a left inset and stay vertically centered at different lengths', async () => {
+  const logo = await readFile(new URL('../public/header-logo.svg', import.meta.url));
+  for (const title of ['Ohio Rail', 'IFP Transit Abundance Playbook']) {
+    const output = await renderSocialImage({ title, logo });
+    const { data, info } = await sharp(output).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+    let firstRow = info.height;
+    let lastRow = 0;
+    let firstColumn = info.width;
+    for (let row = 120; row < info.height; row += 1) {
+      for (let column = 480; column < info.width; column += 1) {
+        const offset = (row * info.width + column) * info.channels;
+        if (data[offset] > 230 && data[offset + 1] > 230 && data[offset + 2] > 230) {
+          firstRow = Math.min(firstRow, row);
+          lastRow = Math.max(lastRow, row);
+          firstColumn = Math.min(firstColumn, column);
+        }
+      }
+    }
+    assert(Math.abs((firstRow + lastRow) / 2 - 315) <= 2, `Title is not vertically centered: ${title}`);
+    assert(firstColumn >= 528 && firstColumn < 535, `Title is not left-aligned: ${title}`);
+  }
+});
 
 test('Wix tracking requires consent and completed privacy/platform reviews', () => {
   const consent = { analytics: true };

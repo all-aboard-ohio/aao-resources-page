@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { getCategoryDirectory } from '../src/data/categories.js';
 import privacyConfig from '../src/data/privacy-config.js';
 import { publishedResourceRoutes } from './resource-data.mjs';
+import sharp from 'sharp';
 
 const root = fileURLToPath(new URL('../dist/', import.meta.url));
 const snapshot = JSON.parse(await readFile(resolve(root, 'data/resources.json'), 'utf8'));
@@ -20,6 +21,7 @@ const publicFiles = new Set(['.nojekyll', 'CNAME', 'robots.txt', 'sitemap.xml',
 for (const category of getCategoryDirectory(snapshot.resources)) {
   const html = await readFile(resolve(root, category.slug, 'index.html'), 'utf8');
   assert(html.includes('class="category-page content-width"'), 'Dedicated category page missing');
+  assert(/property="og:image" content="https:\/\/resources\.allaboardohio\.org\/images\/social\/default-[a-f0-9]{20}\.jpg"/.test(html), 'Category must use the default share image');
   assert(!html.includes('id="blog-heading"'), 'Category page rendered the homepage');
   assert((await readFile(resolve(root, 'sitemap.xml'), 'utf8')).includes(`/${category.slug}/`), 'Category missing from sitemap');
 }
@@ -72,6 +74,7 @@ async function inspect(directory) {
     const approved = publicHtml.has(publicPath) || publicFiles.has(publicPath)
       || /^assets\/[^/]+\.(js|css)$/.test(publicPath)
       || /^images\/generated\/[a-f0-9]{20}-(320|640|960)\.webp$/.test(publicPath)
+      || /^images\/social\/(default|resource|category)-[a-f0-9]{20}\.jpg$/.test(publicPath)
       || /^images\/join-aao\.(jpg|jpeg|webp|png)$/.test(publicPath);
     assert(approved, `Unexpected file in public build: ${publicPath}`);
     if (name.endsWith('.html')) {
@@ -80,6 +83,23 @@ async function inspect(directory) {
       assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) || []).length, 1, 'Expected one page-level heading');
       assert(html.includes('<title>') && html.includes('<meta name="description"'), 'Page SEO title or description missing');
       assert(html.includes('rel="canonical"') && html.includes('property="og:title"'), 'Canonical/social metadata missing');
+      assert(html.includes('name="twitter:card" content="summary_large_image"'), 'Large-image Twitter card missing');
+      const imageUrl = html.match(/property="og:image" content="([^"]+)"/)?.[1];
+      assert(imageUrl?.startsWith('https://resources.allaboardohio.org/images/social/'), 'Absolute social image URL missing');
+      const imagePath = new URL(imageUrl).pathname;
+      assert(/^\/images\/social\/(default|resource|category)-[a-f0-9]{20}\.jpg$/.test(imagePath), 'Invalid social image path');
+      const image = await readFile(resolve(root, `.${imagePath}`));
+      const imageMetadata = await sharp(image).metadata();
+      assert.equal(imageMetadata.width, 1200, 'Social image must be 1200px wide');
+      assert.equal(imageMetadata.height, 630, 'Social image must be 630px high');
+      assert.equal(imageMetadata.format, 'jpeg');
+      assert(image.length < 1000000, 'Social image must remain below 1MB');
+      for (const property of ['og:image:width', 'og:image:height', 'og:image:type', 'og:image:alt']) assert(html.includes(`property="${property}"`), `Missing ${property}`);
+      assert(html.includes(`name="twitter:image" content="${imageUrl}"`), 'Twitter/Open Graph images differ');
+      if (!publicPath.endsWith('404.html')) {
+        const data = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)?.[1] || 'null');
+        assert.equal(data?.image?.url, imageUrl, 'Structured-data image missing');
+      }
       for (const match of html.matchAll(/href="(\/[^"#?]*)"/g)) {
         const href = match[1];
         if (href.startsWith('//')) continue;
