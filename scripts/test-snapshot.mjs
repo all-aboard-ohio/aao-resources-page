@@ -1,11 +1,14 @@
 import { normalizeBlogPost, normalizeResource } from './resource-data.mjs';
-import { getCategoryDirectory } from '../src/data/categories.js';
-
-const categories = getCategoryDirectory([]);
+const categories = [
+  { id: 'test-analysis', title: 'Analysis', description: 'Reports and evidence for better passenger rail.' },
+  { id: 'test-onboarding', title: 'Onboarding' },
+  { id: 'test-templates', title: 'Templates' },
+  { id: 'test-toolkit', title: 'Toolkit' },
+];
 const paragraph = text => ({ nodes: [{ type: 'PARAGRAPH', nodes: [{ type: 'TEXT', textData: { text, decorations: [] } }] }] });
 function resource(data, title) {
   const category = categories.find(category => category.title === title);
-  return normalizeResource(data, category ? [{ id: category.id, title: category.title }] : []);
+  return normalizeResource(data, category ? [category] : [], { '5e58772c-ef16-4e98-9179-e9f91c12180b': '/toolkit/all-aboard-ohio-rack-card-50-second-playbook-to-improving-our-state--5e58772c-ef16-4e98-9179-e9f91c12180b/' });
 }
 
 const resources = [

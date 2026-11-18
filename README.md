@@ -68,10 +68,19 @@ Before the first deployment:
 4. Run the workflow manually and review the successful `github-pages` deployment.
 
 Public Wix visitor reads require no secret. `WIX_CLIENT_ID` can optionally be set
-as a repository variable. Never place secrets in `VITE_` variables. If migrating
+as a repository secret. Never place secrets in `VITE_` variables. If migrating
 an existing Pages deployment that has no route manifest, use the manual workflow's
 `bootstrap_routes` option once; normal runs preserve routes from the last successful
 deployment. A failed fetch, image optimization, test or build prevents deployment.
+
+For a deliberate URL refresh, run the workflow manually with `reset_urls` enabled.
+This regenerates resource paths using the current primary category and trimmed
+short title (falling back to the full title). Leave it off to preserve existing
+published paths. Locally, set `RESET_RESOURCE_URLS=true` before `npm run sync`.
+An old resource link ending in a published UUID is recovered by the Pages 404
+page and redirected to its current canonical URL, keeping query strings and
+fragments. This requires JavaScript; Pages initially returns HTTP 404 before the
+browser redirects. Unknown or unpublished IDs remain not found.
 
 Local static verification: `npm test`, `npm run lint`, `npm run build`, then
 `npm run preview`. Set `PORT` if 4174 is already occupied.
@@ -86,16 +95,16 @@ this site; the integration does not write consent to Wix's consent-policy API.
 
 ## Category Pages
 
-Categories have dedicated static pages such as `/analysis/`, `/printables/`,
-`/templates/`, `/toolkit/`, and `/onboarding/`, with breadcrumbs, search, sorting
+Categories have dedicated static pages such as `/research-analysis/` and
+`/templates-toolkits/`, with descriptions, breadcrumbs, search, sorting
 and links to other categories. The Resources menu and homepage category filters
 link to these pages. Resources appear under all their assigned categories.
 
-`src/data/categories.js` retains the verified Wix category IDs so empty categories
-remain linkable without exposing draft records. New categories discovered through
-published resource references are included automatically; register a category here
-if it must exist before it has any published resources. Sparse categories show
-a coming-soon placeholder without displaying draft content.
+Category names and descriptions come only from current published resource
+references; there is no hard-coded registry retaining renamed/deleted categories.
+A category without any public resource references is not listed. Default ordering
+is featured first, then newest creation date (update date is a fallback), with
+title/ID tie-breaks. Sparse categories show a coming-soon placeholder.
 
 ## Data Sources
 

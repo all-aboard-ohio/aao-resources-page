@@ -4,9 +4,25 @@ export function publishedResourceRoutes(resources) {
   return Object.fromEntries(resources.map(resource => [resource.id, resource.path]));
 }
 
+export function resolveResourcePath(resources, path) {
+  const normalized = path.endsWith('/') ? path : `${path}/`;
+  const exact = resources.find(resource => resource.path === normalized);
+  if (exact) return exact;
+  const identifier = normalized.match(/(?:^|\/|--)([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})\/$/i)?.[1];
+  return identifier ? resources.find(resource => resource.id.toLowerCase() === identifier.toLowerCase()) : undefined;
+}
+
 export function slugify(value) {
   return String(value || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'resource';
+}
+
+export function compareResources(left, right, sort = 'featured') {
+  const newestFirst = (Date.parse(right.created || right.updated) || 0) - (Date.parse(left.created || left.updated) || 0);
+  const byTitle = left.title.localeCompare(right.title) || left.id.localeCompare(right.id);
+  if (sort === 'title') return byTitle;
+  if (sort === 'recent') return newestFirst || byTitle;
+  return Number(right.featured) - Number(left.featured) || newestFirst || byTitle;
 }
 
 export function normalizeBlogPost(data) {
@@ -76,7 +92,8 @@ export function normalizeResource(data, categories, previousRoutes = {}, warning
   const type = primary?.title || 'Uncategorized';
   const typeSlug = slugify(type);
   const previous = previousRoutes[data._id];
-  const proposed = `/${typeSlug}/${slugify(data.title)}--${data._id}/`;
+  const shortTitle = typeof data.shortTitle === 'string' && data.shortTitle.trim() ? data.shortTitle.trim() : data.title.trim();
+  const proposed = `/${typeSlug}/${slugify(shortTitle)}--${data._id}/`;
   const path = typeof previous === 'string' && /^\/[a-z0-9-]+\/[a-z0-9-]+\/$/.test(previous)
     ? previous : proposed;
   const rawAttachments = Array.isArray(data.arraydocument) ? data.arraydocument : [data.arraydocument];
@@ -96,9 +113,10 @@ export function normalizeResource(data, categories, previousRoutes = {}, warning
     return [{ url, name: typeof value === 'object' && value.title ? value.title : new URL(url).hostname || 'External resource' }];
   });
   return {
-    id: data._id, title: data.title.trim(), shortTitle: data.shortTitle || data.title.trim(),
+    id: data._id, title: data.title.trim(), shortTitle,
     summary: data.subjectLine || '', type, typeSlug, categories, path,
     featured: data.featured === true, image: safeUrl(data.imagePreview, { media: true }),
+    created: data._createdDate instanceof Date ? data._createdDate.toISOString() : data._createdDate || null,
     updated: data._updatedDate instanceof Date ? data._updatedDate.toISOString() : data._updatedDate || null,
     content: publicRichContent(data.studyInfo, warnings), attachments, externalLinks,
   };

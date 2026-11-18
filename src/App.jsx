@@ -1,8 +1,8 @@
-import { useState, useSyncExternalStore } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { ArrowLeft, ArrowRight, AtSign, CalendarDays, ChartNoAxesCombined, ChevronRight, ExternalLink, FileText, Files, Image, Landmark, Menu, Search, X } from 'lucide-react';
 import snapshot from './data/resources.json';
 import RichContent, { ExternalLinkAnchor } from './components/RichContent.jsx';
-import { slugify } from '../scripts/resource-data.mjs';
+import { slugify, compareResources } from '../scripts/resource-data.mjs';
 import { getCategoryDirectory, resourceInCategory } from './data/categories.js';
 import PrivacyControls from './components/PrivacyControls.jsx';
 import Privacy from './pages/Privacy.jsx';
@@ -54,7 +54,7 @@ function Preview({ resource, featured = false, sizes = '(min-width: 1024px) 230p
   const [failedImage, setFailedImage] = useState(null);
   const image = resource.thumbnail?.src || resource.image;
   if (image && image !== failedImage) {
-    return <div className={`resource-preview ${featured ? 'feature-preview' : ''}`} aria-hidden="true"><img src={image} srcSet={resource.thumbnail?.srcSet} sizes={resource.thumbnail ? sizes : undefined} width={resource.thumbnail?.width} height={resource.thumbnail?.height} alt="" loading={featured ? 'eager' : 'lazy'} fetchPriority={featured ? 'high' : undefined} decoding="async" onError={() => setFailedImage(image)} /></div>;
+    return <div className={`resource-preview ${featured ? 'feature-preview' : ''}`} aria-hidden="true"><img key={image} src={image} srcSet={resource.thumbnail?.srcSet} sizes={resource.thumbnail ? sizes : undefined} width={resource.thumbnail?.width} height={resource.thumbnail?.height} alt="" loading={featured ? 'eager' : 'lazy'} fetchPriority={featured ? 'high' : undefined} decoding="async" onError={() => setFailedImage(image)} /></div>;
   }
   return <div className={`resource-preview ${featured ? 'feature-preview' : ''}`} aria-hidden="true"><div className="preview-lines" /><div className="preview-symbol"><FileText strokeWidth={1.3} size={featured ? 58 : 40} /></div><span>{resource.type}</span><Image className="placeholder-mark" size={17} /></div>;
 }
@@ -68,13 +68,13 @@ function ComingSoonResource() {
 }
 
 function FeaturedResources() {
-  const resources = snapshot.resources.filter(resource => resource.featured);
+  const resources = snapshot.resources.filter(resource => resource.featured).slice(0, 8);
   return <section className="featured-resources" aria-labelledby="featured-heading"><h2 id="featured-heading">Featured Resources</h2><ul className="featured-picks">{resources.map(resource => <li key={resource.id}><a href={resource.path}><Preview resource={resource} sizes="(min-width: 768px) 80px, 64px" /><div><h3>{resource.shortTitle}</h3><p>{resource.summary || resource.type}</p></div></a></li>)}{resources.length < 4 && <li><ComingSoonResource /></li>}</ul></section>;
 }
 
 function ResourceActions() {
   const brochure = snapshot.resources.find(resource => resource.id === 'a65bdd10-1df4-4e29-92b5-b6fb7177f3ef');
-  const analysis = snapshot.resources.find(resource => resource.type === 'Analysis');
+  const analysis = snapshot.resources.find(resource => /analysis/i.test(resource.type));
   const choices = [
     { title: 'Contact my legislators', description: 'Speak up for better passenger rail and transit in Ohio.', href: `${MAIN_SITE}/advocacy`, Icon: Landmark },
     { title: 'Pass out impactful fliers', description: 'Bring the conversation to your community with materials to share.', href: brochure?.path || `${MAIN_SITE}/contact`, Icon: Files },
@@ -97,7 +97,7 @@ function LatestBlogStories() {
 function JoinAllAboardOhio() {
   const [imageFailed, setImageFailed] = useState(false);
   const photo = import.meta.env.AAO_JOIN_PHOTO;
-  return <section className="join-section" aria-labelledby="join-heading"><div className="join-layout content-width"><div className="join-copy"><div className="join-copy-inner"><p className="eyebrow">All Aboard Ohio</p><h2 id="join-heading">A more connected Ohio starts with you.</h2><p className="join-summary">Join the people working for better passenger rail and public transportation across Ohio.</p><div className="join-actions"><ExternalLinkAnchor className="action-link" href={`${MAIN_SITE}/join`}>Become a member</ExternalLinkAnchor><ExternalLinkAnchor className="supporter-link" href={`${MAIN_SITE}/join`}>Join our supporter list</ExternalLinkAnchor></div><p className="join-note">Stay connected to rail news, advocacy updates, and opportunities to make a difference.</p></div></div><div className="join-photo">{photo && !imageFailed ? <img src={photo} alt="All Aboard Ohio members and supporters" loading="lazy" decoding="async" onError={() => setImageFailed(true)} /> : <div className="join-photo-placeholder" role="img" aria-label="All Aboard Ohio community photo placeholder"><Image size={44} strokeWidth={1} aria-hidden="true" /></div>}</div></div></section>;
+  return <section className="join-section" aria-labelledby="join-heading"><div className={`join-layout content-width${photo && !imageFailed ? '' : ' join-text-only'}`}><div className="join-copy"><div className="join-copy-inner"><h2 id="join-heading">A more connected Ohio starts with you.</h2><p className="join-summary">Join the people working for better passenger rail and public transportation across Ohio.</p><div className="join-actions"><ExternalLinkAnchor className="action-link" href={`${MAIN_SITE}/join`}>Become a member</ExternalLinkAnchor><ExternalLinkAnchor className="supporter-link" href={`${MAIN_SITE}/join`}>Join our supporter list</ExternalLinkAnchor></div><p className="join-note">Stay connected to rail news, advocacy updates, and opportunities to make a difference.</p></div></div>{photo && !imageFailed && <div className="join-photo"><img src={photo} alt="Illustrated Ohio passenger rail map showing Toledo, Cleveland, Columbus, Dayton, and Cincinnati" loading="lazy" decoding="async" onError={() => setImageFailed(true)} /></div>}</div></section>;
 }
 
 function subscribeToLocation(callback) {
@@ -106,6 +106,16 @@ function subscribeToLocation(callback) {
 }
 
 function Home() {
+  useEffect(() => {
+    const ordered = [...snapshot.resources].sort(compareResources);
+    const leads = getCategoryDirectory(ordered).map(category => ordered.find(resource => resourceInCategory(resource, category)));
+    const sources = [...new Set(leads.map(resource => resource?.thumbnail?.src || resource?.image).filter(Boolean))].slice(0, 8);
+    for (const source of sources) {
+      const image = new window.Image();
+      image.fetchPriority = 'low';
+      image.src = source;
+    }
+  }, []);
   const locationQuery = useSyncExternalStore(subscribeToLocation, () => new URLSearchParams(window.location.search).get('q') || '', () => '');
   const [queryOverride, setQuery] = useState(null);
   const query = queryOverride ?? locationQuery;
@@ -117,7 +127,7 @@ function Home() {
   const selectedCategory = directory.find(category => category.title === type);
   const words = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   const matches = resources.filter(resource => (!selectedCategory || resourceInCategory(resource, selectedCategory)) && words.every(word => `${resource.title} ${resource.summary} ${resource.type} ${resource.categories.map(category => category.title).join(' ')}`.toLowerCase().includes(word)))
-    .sort((left, right) => sort === 'recent' ? String(right.updated).localeCompare(String(left.updated)) : sort === 'featured' ? Number(right.featured) - Number(left.featured) || left.title.localeCompare(right.title) : left.title.localeCompare(right.title));
+    .sort((left, right) => compareResources(left, right, sort));
   function chooseType(value) {
     setType(value);
   }
@@ -135,11 +145,11 @@ function Home() {
   }
   return <>
     <div className="library-page content-width"><div className="library-page-title"><h1>Tools for the Track Ahead</h1><p>Research, tools, and information from All Aboard Ohio.</p></div>
-      <div className="library-toolbar"><form className="search-field" role="search" onSubmit={event => event.preventDefault()}><Search size={20} aria-hidden="true" /><label className="sr-only" htmlFor="resource-search">Search resources</label><input id="resource-search" type="search" placeholder="Search resources" value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" title="Clear search" aria-label="Clear search" onClick={() => setQuery('')}><X size={17} /></button>}</form><label className="sort-field">Sort by<select value={sort} onChange={event => setSort(event.target.value)}><option value="featured">Featured first</option><option value="title">Title A-Z</option><option value="recent">Recently updated</option></select></label></div>
-      <section id="browse" className="latest-section" aria-labelledby="browse-heading"><h2 id="browse-heading">{type ? `${type} Resources` : 'Resources'}</h2><div className="latest-layout">
+      <div className="library-toolbar"><form className="search-field" role="search" onSubmit={event => event.preventDefault()}><Search size={20} aria-hidden="true" /><label className="sr-only" htmlFor="resource-search">Search resources</label><input id="resource-search" type="search" placeholder="Search resources" value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" title="Clear search" aria-label="Clear search" onClick={() => setQuery('')}><X size={17} /></button>}</form><label className="sort-field">Sort by<select value={sort} onChange={event => setSort(event.target.value)}><option value="featured">Featured first</option><option value="title">Title A-Z</option><option value="recent">Newest first</option></select></label></div>
+      <section id="browse" className="latest-section" aria-labelledby="browse-heading"><h2 id="browse-heading">{type ? `${type} Resources` : 'Resources'}</h2>{selectedCategory?.description && <p className="category-description">{selectedCategory.description}</p>}<div className="latest-layout">
         <div className="category-tabs" role="tablist" aria-label="Resource categories">{['', ...types].map((value, index) => <button key={value} type="button" role="tab" id={`category-${slugify(value || 'all')}`} aria-controls="resource-panel" aria-selected={type === value} tabIndex={type === value ? 0 : -1} onClick={() => chooseType(value)} onKeyDown={event => navigateCategories(event, index)}><span>{value || 'All'}</span><ChevronRight size={25} aria-hidden="true" /></button>)}</div>
         <div className="latest-panel" id="resource-panel" role="tabpanel" aria-labelledby={`category-${slugify(type || 'all')}`}><p className="sr-only" role="status">{query.trim() ? `Search results for "${query.trim()}"` : ''}</p>
-          {matches.length ? <><ResourceCard resource={matches[0]} featured />{(matches.length > 1 || !query.trim()) && <div className="small-resource-grid">{matches.slice(1, 5).map(resource => <ResourceCard key={resource.id} resource={resource} />)}{!query.trim() && matches.length < 5 && <ComingSoonResource />}</div>}</> : query.trim() ? <div className="empty-state"><Search size={30} aria-hidden="true" /><h3>No resources found</h3><p>Try a different search or resource type.</p><button onClick={() => { setQuery(''); chooseType(''); }}>Clear filters</button></div> : <div className="small-resource-grid"><ComingSoonResource /></div>}
+          {matches.length ? <><ResourceCard key={matches[0].id} resource={matches[0]} featured />{(matches.length > 1 || !query.trim()) && <div className="small-resource-grid">{matches.slice(1, 5).map(resource => <ResourceCard key={resource.id} resource={resource} />)}{!query.trim() && matches.length < 5 && <ComingSoonResource />}</div>}</> : query.trim() ? <div className="empty-state"><Search size={30} aria-hidden="true" /><h3>No resources found</h3><p>Try a different search or resource type.</p><button onClick={() => { setQuery(''); chooseType(''); }}>Clear filters</button></div> : <div className="small-resource-grid"><ComingSoonResource /></div>}
           {selectedCategory && <div className="category-callout"><a className="category-page-link" href={`/${selectedCategory.slug}/`}>See More {selectedCategory.title}<ArrowRight size={17} aria-hidden="true" /></a></div>}
         </div>
       </div></section>
@@ -166,19 +176,19 @@ function DonateBox() {
 
 function CategoryPage({ category }) {
   const [query, setQuery] = useState('');
-  const [sort, setSort] = useState('title');
+  const [sort, setSort] = useState('featured');
   const directory = getCategoryDirectory(snapshot.resources);
   const resources = snapshot.resources.filter(resource => resourceInCategory(resource, category));
   const matches = resources.filter(resource => `${resource.title} ${resource.summary}`.toLowerCase().includes(query.trim().toLowerCase()))
-    .sort((left, right) => sort === 'recent' ? String(right.updated).localeCompare(String(left.updated)) : left.title.localeCompare(right.title));
+    .sort((left, right) => compareResources(left, right, sort));
   return <div className="category-page content-width">
     <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Resources</a></li><li><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{category.title}</span></li></ol></nav>
-    <header className="category-page-heading"><h1>{category.title} Resources</h1></header>
+    <header className="category-page-heading"><h1>{category.title} Resources</h1>{category.description && <p className="category-description">{category.description}</p>}</header>
     <div className="category-page-layout">
       <nav className="category-directory" aria-label="Resource categories"><a href="/">All resources<ArrowRight size={16} aria-hidden="true" /></a>{directory.map(item => <a key={item.id} href={`/${item.slug}/`} aria-current={item.id === category.id ? 'page' : undefined}>{item.title}</a>)}</nav>
       <section className="category-listing" aria-labelledby="category-list-heading">
         <h2 id="category-list-heading" className="sr-only">{category.title} resources</h2>
-        {resources.length > 0 && <div className="library-toolbar"><form className="search-field" role="search" onSubmit={event => event.preventDefault()}><Search size={20} aria-hidden="true" /><label className="sr-only" htmlFor="category-search">Search {category.title.toLowerCase()} resources</label><input id="category-search" type="search" placeholder={`Search ${category.title.toLowerCase()}`} value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" title="Clear search" aria-label="Clear search" onClick={() => setQuery('')}><X size={17} /></button>}</form><label className="sort-field">Sort by<select value={sort} onChange={event => setSort(event.target.value)}><option value="title">Title A-Z</option><option value="recent">Recently updated</option></select></label></div>}
+        {resources.length > 0 && <div className="library-toolbar"><form className="search-field" role="search" onSubmit={event => event.preventDefault()}><Search size={20} aria-hidden="true" /><label className="sr-only" htmlFor="category-search">Search {category.title.toLowerCase()} resources</label><input id="category-search" type="search" placeholder={`Search ${category.title.toLowerCase()}`} value={query} onChange={event => setQuery(event.target.value)} />{query && <button type="button" title="Clear search" aria-label="Clear search" onClick={() => setQuery('')}><X size={17} /></button>}</form><label className="sort-field">Sort by<select value={sort} onChange={event => setSort(event.target.value)}><option value="featured">Featured first</option><option value="recent">Newest first</option><option value="title">Title A-Z</option></select></label></div>}
         <p role="status" className="sr-only">{query.trim() ? `Search results for "${query.trim()}"` : ''}</p>
         {matches.length || !query.trim() ? <ul className="category-resource-list">{matches.map(resource => <li key={resource.id}><ResourceCard resource={resource} /></li>)}{!query.trim() && matches.length < 4 && <li><ComingSoonResource /></li>}</ul> : <div className="empty-state"><Search size={30} aria-hidden="true" /><h2>No matching resources</h2><p>Try another search.</p><button onClick={() => setQuery('')}>Clear search</button></div>}
       </section>
@@ -188,7 +198,7 @@ function CategoryPage({ category }) {
 
 function Detail({ resource }) {
   const related = snapshot.resources.filter(item => item.id !== resource.id).slice(0, 3);
-  return <><section className="resource-title-band"><div className="detail-width"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Resources</a></li><li><ChevronRight size={14} aria-hidden="true" /><a href={`/${resource.typeSlug}/`}>{resource.type}</a></li><li><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{resource.shortTitle}</span></li></ol></nav><div className="detail-top"><div><p className="eyebrow">{resource.type}</p><h1>{resource.title}</h1>{resource.summary && <p className="detail-summary">{resource.summary}</p>}<ResourceQuickLinks resource={resource} /></div><figure className="detail-preview"><Preview resource={resource} /></figure></div></div></section><div className="detail-width">
+  return <><section className="resource-title-band"><div className="detail-width"><nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Resources</a></li><li><ChevronRight size={14} aria-hidden="true" /><a href={`/${resource.typeSlug}/`}>{resource.type}</a></li><li><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{resource.shortTitle}</span></li></ol></nav><div className="detail-top"><div><a className="eyebrow" href={`/${resource.typeSlug}/`}>{resource.type}</a><h1>{resource.title}</h1>{resource.summary && <p className="detail-summary">{resource.summary}</p>}<ResourceQuickLinks resource={resource} /></div><figure className="detail-preview"><Preview resource={resource} /></figure></div></div></section><div className="detail-width">
     <div className="resource-detail-layout">
       <article className="resource-detail"><RichContent content={resource.content} />
         {(resource.attachments.length > 0 || resource.externalLinks.length > 0) && <div className="resource-actions">{resource.attachments.length > 0 && <section aria-labelledby="download-heading"><h2 id="download-heading">Downloads</h2><ul>{resource.attachments.map(item => <li key={item.url}><ExternalLinkAnchor href={item.url} className="download-link"><FileText size={20} aria-hidden="true" />{item.name}</ExternalLinkAnchor></li>)}</ul></section>}{resource.externalLinks.length > 0 && <section aria-labelledby="external-heading"><h2 id="external-heading">External Resources</h2><ul>{resource.externalLinks.map(item => <li key={item.url}><ExternalLinkAnchor href={item.url}>{item.name}</ExternalLinkAnchor></li>)}</ul></section>}</div>}

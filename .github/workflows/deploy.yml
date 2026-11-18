@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+      reset_urls:
+        description: Regenerate all resource URLs from current categories and short titles (old UUID links recover through the 404 page)
+        type: boolean
+        default: false
       bootstrap_routes:
         description: Use the committed route manifest instead of the previous deployment (first migration or disaster recovery only)
         type: boolean
@@ -61,6 +65,7 @@ jobs:
         env:
           WIX_CLIENT_ID: ${{ secrets.WIX_CLIENT_ID || '9559f2fe-3c4f-418d-97dc-fe3e6996d980' }}
           PREVIOUS_ROUTES_URL: ${{ steps.previous.outputs.routes_url }}
+          RESET_RESOURCE_URLS: ${{ inputs.reset_urls && 'true' || 'false' }}
       - name: Decide whether a deployment is needed
         id: decision
         env:

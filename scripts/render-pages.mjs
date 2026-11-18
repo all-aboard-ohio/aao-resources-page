@@ -13,7 +13,7 @@ const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '
 const pages = [
   { path: '/', title: 'Tools for the Track Ahead | All Aboard Ohio', description: 'Research, practical tools, and information for a more connected Ohio.' },
   { path: '/privacy/', title: 'Privacy & Cookies | All Aboard Ohio', description: 'Resource-library privacy information and choices.', noindex: !privacyConfig.privacyReviewed },
-  ...getCategoryDirectory(snapshot.resources).map(category => ({ path: `/${category.slug}/`, title: `${category.title} Resources | All Aboard Ohio`, description: `Explore ${category.title.toLowerCase()} resources from All Aboard Ohio.` })),
+  ...getCategoryDirectory(snapshot.resources).map(category => ({ path: `/${category.slug}/`, title: `${category.title} Resources | All Aboard Ohio`, description: category.description || `Explore ${category.title.toLowerCase()} resources from All Aboard Ohio.` })),
   ...snapshot.resources.map(resource => ({ path: resource.path, title: `${resource.title} | All Aboard Ohio`, description: resource.summary || resource.title })),
   { path: '/404.html', title: 'Resource Not Found | All Aboard Ohio', description: 'This resource is unavailable.', notFound: true },
 ];

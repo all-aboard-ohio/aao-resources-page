@@ -45,7 +45,7 @@ async function previousSnapshot() {
 
 async function main() {
   const previous = await previousSnapshot();
-  const routes = previous.routes;
+  const routes = process.env.RESET_RESOURCE_URLS === 'true' ? {} : previous.routes;
   if (!routes || typeof routes !== 'object' || Array.isArray(routes)) throw new Error('Invalid previous route manifest');
   const records = await allPages(() => client.items.query('Resources').limit(100).find());
   const warnings = [];
@@ -56,7 +56,7 @@ async function main() {
     const categories = references.map(reference => {
       const category = reference.data || reference;
       if (!category._id || !category.title) throw new Error('Invalid category reference');
-      return { id: category._id, title: category.title };
+      return { id: category._id, title: category.title, description: typeof category.description === 'string' ? category.description.trim() : '' };
     });
     resources.push(normalizeResource({ ...data, studyInfo: normalizeWixRichContent(data.studyInfo, warnings) }, categories, routes, warnings));
   }

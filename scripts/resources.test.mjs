@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
 import { createImageVariants } from './optimize-images.mjs';
-import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent, publishedResourceRoutes } from './resource-data.mjs';
+import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent, publishedResourceRoutes, resolveResourcePath, compareResources } from './resource-data.mjs';
 import { normalizeWixRichContent } from './wix-rich-content.mjs';
 import { renderRichContent, render } from '../.server/entry-server.js';
 import { getCategoryDirectory, resourceInCategory } from '../src/data/categories.js';
@@ -105,7 +105,7 @@ test('header has the source logo and Resources in place of More, with no login',
   const nav = html.match(/<nav class="desktop-nav".*?<\/nav>/s)?.[0];
   assert(nav);
   assert.match(nav, /<summary>Resources<\/summary>/);
-  assert.match(nav, /href="\/printables\/"/);
+  assert.match(nav, /href="\/analysis\/"/);
   assert(!html.includes('<summary>More</summary>'));
   assert(!html.includes('Log In'));
   assert.match(html, /src="\/header-logo.svg"/);
@@ -200,6 +200,23 @@ test('public route manifest keeps active paths without exposing withdrawn titles
   assert.deepEqual(publishedResourceRoutes([]), {});
 });
 
+test('new and reset URLs use trimmed short titles while existing routes remain stable', () => {
+  const data = { _id: 'abc', title: 'The full resource title', shortTitle: '  Short title  ' };
+  assert.equal(normalizeResource(data, []).path, '/uncategorized/short-title--abc/');
+  assert.equal(normalizeResource({ ...data, shortTitle: ' ' }, []).path, '/uncategorized/the-full-resource-title--abc/');
+  assert.equal(normalizeResource(data, [], { abc: '/old/established--abc/' }).path, '/old/established--abc/');
+});
+
+test('UUID recovery finds only published resources despite category/title changes', () => {
+  const resource = { id: '86bd1c2b-e31c-401c-b952-b7bab43e4db8', path: '/new/short--86bd1c2b-e31c-401c-b952-b7bab43e4db8/' };
+  assert.equal(resolveResourcePath([resource], '/old/previous-title--86bd1c2b-e31c-401c-b952-b7bab43e4db8/'), resource);
+  assert.equal(resolveResourcePath([resource], '/86bd1c2b-e31c-401c-b952-b7bab43e4db8'), resource);
+  assert.equal(resolveResourcePath([resource], resource.path), resource);
+  assert.equal(resolveResourcePath([], resource.path), undefined);
+  assert.equal(resolveResourcePath([resource], '/not-a-resource/'), undefined);
+  assert.equal(resolveResourcePath([resource], '/86bd1c2b-e31c-401c-b952-b7bab43e4db8/extra/'), undefined);
+});
+
 test('renders paragraphs, H2/H3, bold, italic and external hyperlinks', () => {
   const html = renderNodes([paragraph('Paragraph'), { type: 'HEADING', headingData: { level: 2 }, nodes: [text('Heading two')] }, { type: 'HEADING', headingData: { level: 3 }, nodes: [text('Heading three')] }, { type: 'PARAGRAPH', nodes: [text('Bold', [{ type: 'BOLD' }]), text('Italic', [{ type: 'ITALIC' }]), text('Link', [{ type: 'LINK', linkData: { link: { url: 'https://example.com' } } }])] }]);
   for (const snippet of ['<p>Paragraph</p>', '<h2>Heading two</h2>', '<h3>Heading three</h3>', '<strong>Bold</strong>', '<em>Italic</em>', 'target="_blank"', 'noopener noreferrer', 'opens in a new tab']) assert(html.includes(snippet), snippet);
@@ -282,6 +299,7 @@ test('resource detail pages include the blog-style mission and donate card besid
   assert.match(html, /href="https:\/\/www\.allaboardohio\.org\/donate" target="_blank"/);
   assert.match(html, /class="donate-box-button"[^>]*>DONATE<svg/);
   assert.match(html, /class="resource-quick-link"/);
+  assert.match(html, /<a class="eyebrow" href="\/analysis\/">Analysis<\/a>/);
 });
 
 test('resource headings follow the selected type and CMS thumbnails are rendered', () => {
@@ -303,18 +321,23 @@ test('featured resources and AAO joining sections follow the library in template
   assert.equal((featuredSection.match(/content-coming-soon/g) || []).length, 1);
   assert.match(html, /Become a member/);
   assert.match(html, /Join our supporter list/);
+  assert(!html.includes('join-photo-placeholder'));
+  assert(!html.includes('<p class="eyebrow">All Aboard Ohio</p>'));
   assert(!html.includes('type="email"'));
   assert(!html.includes('data-tagular'));
 });
 
-test('category pages have dedicated listings and empty categories do not expose drafts', () => {
+test('category pages show current listings and omit retired categories', () => {
   const analysis = render('/analysis/', null);
   assert.match(analysis, /class="category-resource-list"/);
+  assert.match(analysis, /Reports and evidence for better passenger rail\./);
+  assert.match(analysis, /value="featured" selected=""/);
   assert.match(analysis, /Ohio Runs on Rail Book/);
   assert(!analysis.includes('id="blog-heading"'));
   assert(!analysis.includes('id="join-heading"'));
-  const printables = render('/printables/', null);
-  assert.match(printables.replace(/<!--.*?-->/g, ''), /<h1>Printables Resources<\/h1>/);
+  const printables = render('/templates/', null);
+  assert.match(printables.replace(/<!--.*?-->/g, ''), /<h1>Templates Resources<\/h1>/);
+  assert.match(render('/printables/', null), /Resource Not Found/);
   assert.match(printables, /More content on the way/);
   assert(!/\d+ published resource/.test(analysis + printables));
   assert(!/class="results-status"/.test(analysis + printables));
@@ -323,13 +346,25 @@ test('category pages have dedicated listings and empty categories do not expose 
   assert(!printables.includes('Fiscal Analysis of Operating Costs'));
 });
 
-test('category directory includes empty categories and secondary references', () => {
+test('category directory includes current categories and secondary references only', () => {
   const resource = { typeSlug: 'analysis', categories: [{ id: '65bf1934-b070-4e34-8a61-a6870946ba7b', title: 'Analysis' }, { id: '529c5287-bd31-4c97-a4c5-61598ab909e2', title: 'Printables' }] };
   const directory = getCategoryDirectory([resource]);
   const printables = directory.find(category => category.slug === 'printables');
   assert(resourceInCategory(resource, printables));
   assert.equal(printables.count, 1);
-  assert.equal(getCategoryDirectory([]).find(category => category.slug === 'printables').count, 0);
+  assert.deepEqual(getCategoryDirectory([]), []);
+  assert.equal(directory.some(category => category.title === 'Toolkit'), false);
+});
+
+test('featured resources sort first, then newest creation date with deterministic ties', () => {
+  const resources = [
+    { id: 'old', title: 'A', featured: false, created: '2025-01-01', updated: '2027-01-01' },
+    { id: 'new', title: 'B', featured: false, created: '2026-01-01' },
+    { id: 'featured-old', title: 'C', featured: true, created: '2024-01-01' },
+    { id: 'featured-new', title: 'D', featured: true, created: '2025-01-01' },
+  ];
+  assert.deepEqual([...resources].sort(compareResources).map(resource => resource.id), ['featured-new', 'featured-old', 'new', 'old']);
+  assert.deepEqual([...resources].sort((left, right) => compareResources(left, right, 'recent')).map(resource => resource.id), ['new', 'old', 'featured-new', 'featured-old']);
 });
 
 test('homepage action section contains four working destinations between featured and joining content', () => {

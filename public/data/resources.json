@@ -1,24 +1,1097 @@
 {
   "version": 1,
-  "hash": "fb74d77aaabcc81433bbabb487f5d9f9e268796d84a96507532a0361a5895852",
+  "hash": "54930621d6c4368dfe19c6706047809dc32f6556bae857c999ee462d9b5c737f",
   "resources": [
     {
-      "id": "5e58772c-ef16-4e98-9179-e9f91c12180b",
-      "title": "All Aboard Ohio Rack Card: 50 Second Playbook to Improving Our State",
-      "shortTitle": "All Aboard Ohio Rack Card",
-      "summary": "50 Second Playbook to Improving Our State",
-      "type": "Toolkit",
-      "typeSlug": "toolkit",
+      "id": "0124ec08-5293-420f-a9e2-785d46fc6c8c",
+      "title": "How Things Work at the Ohio Statehouse: A Guide to Ohio Legislation",
+      "shortTitle": "How Things Work at the Ohio Statehouse",
+      "summary": "At All Aboard Ohio’s September 2026 Statewide Meeting, political strategist Rachel Coyle presented How Things Work at the Statehouse, a practical introduction to advocacy in the Ohio General Assembly.  ",
+      "type": "Onboarding & Advocacy 101",
+      "typeSlug": "onboarding-advocacy-101",
       "categories": [
         {
-          "id": "a61f9f89-576b-4d18-8b4e-cb1952fe382a",
-          "title": "Toolkit"
+          "id": "c26ab23a-e83c-4824-aaef-dc92438e5d62",
+          "title": "Onboarding & Advocacy 101",
+          "description": "Introductory materials for new members, volunteers, or local officials getting up to speed. This houses basic transit concepts, \"how to advocate\" primers, and introductory organizational guides."
         }
       ],
-      "path": "/toolkit/all-aboard-ohio-rack-card-50-second-playbook-to-improving-our-state--5e58772c-ef16-4e98-9179-e9f91c12180b/",
+      "path": "/onboarding-advocacy-101/how-things-work-at-the-ohio-statehouse--0124ec08-5293-420f-a9e2-785d46fc6c8c/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_36205eec655b4303b129aca927f3a82b~mv2.jpg",
+      "created": "2026-11-12T18:29:51.052Z",
+      "updated": "2026-11-12T18:29:51.052Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "7pclx2",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "A video recording of this presentation is also available at ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "How Things Work at the Statehouse w/ Rachel Coyle",
+                  "decorations": [
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "https://www.youtube.com/watch?v=9WpsorrG4gE",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [
+        {
+          "url": "https://www.allaboardohio.org/_files/ugd/903aba_35a4a022695b4fbaa1aba0237dd4f8fe.pptx",
+          "name": "How Things Work - All Aboard Ohio.pptx"
+        }
+      ],
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/a3b2ff1c1ebf30425fc3-640.webp",
+        "srcSet": "/images/generated/a3b2ff1c1ebf30425fc3-320.webp 320w, /images/generated/a3b2ff1c1ebf30425fc3-640.webp 640w, /images/generated/a3b2ff1c1ebf30425fc3-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
+      "id": "15b5f0f7-0b60-45a3-97cc-f56f1c54a680",
+      "title": "Study Results Fact Sheet: What Passenger Rail Could Deliver for Ohio",
+      "shortTitle": "Fact Sheet: What Rail Could Deliver for Ohio",
+      "summary": "The Rail Passengers Association model highlights the nearly $190 million in annual benefits within Ohio from building out Ohio's passenger rail network.",
+      "type": "Research & Analysis",
+      "typeSlug": "research-analysis",
+      "categories": [
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
+        },
+        {
+          "id": "529c5287-bd31-4c97-a4c5-61598ab909e2",
+          "title": "Printable & Handouts",
+          "description": "High-level, visually engaging collateral meant for physical distribution or quick digital forwarding. This covers tri-fold brochures, quick-glance fact sheets, tabling materials, and event flyers designed for the general public."
+        }
+      ],
+      "path": "/research-analysis/fact-sheet-what-rail-could-deliver-for-ohio--15b5f0f7-0b60-45a3-97cc-f56f1c54a680/",
       "featured": true,
-      "image": null,
-      "updated": "2026-11-10T20:40:01.947Z",
+      "image": "https://static.wixstatic.com/media/cb899b_215a0cffc09a42b789ce144d4512764d~mv2.jpg",
+      "created": "2026-11-17T22:26:31.116Z",
+      "updated": "2026-11-17T22:26:31.116Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "vkt8r289",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "A connected network of six proposed passenger-rail services could deliver nearly $190 million in annual benefits within Ohio. The complete network is projected to generate 1.69 million annual passenger trips through Ohio stations. While the full network showcases the maximum potential, Ohio can realize significant returns by building and connecting individual, useful pieces.   ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "1guqe291",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "HEADING",
+            "id": "2dut5292",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Route-Specific Opportunities",
+                  "decorations": []
+                }
+              }
+            ],
+            "headingData": {
+              "level": 2,
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "i5dwe294",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Ohio does not need to wait for the entire network to be built to see a return on investment. The Rail Passengers Association model highlights four immediate standalone opportunities:   ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "jwn8k296",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "8kqwf297",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "l3xpz298",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "vvw1r299",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Cincinnati-Dayton-Columbus-Cleveland (3C+D):",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Projects 375,000 annual Ohio passenger trips and $28.2 million in annual modeled benefits.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "o5474302",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "vcvyj303",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "vs7fs304",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Midwest Connect (Chicago-Fort Wayne-Columbus-Pittsburgh):",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Projects 200,000 annual Ohio passenger trips and $15.1 million in total annual modeled benefits.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "6g4xi307",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "2abg9308",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "18ny2309",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Detroit-Toledo-Cleveland:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Projects 188,000 annual Ohio passenger trips and $14.1 million in annual modeled benefits.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "57lis312",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "k6t4e313",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "7tkxo314",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Daily Cardinal:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Increasing existing service to a daily schedule projects 45,000 annual Ohio passenger trips and $11.8 million in annual modeled benefits.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "2933s317",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "HEADING",
+            "id": "hqhdv318",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The Value of Network Synergy",
+                  "decorations": []
+                }
+              }
+            ],
+            "headingData": {
+              "level": 2,
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "m31fk320",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The six proposed services, when modeled individually, would total about 1.16 million annual passenger trips in Ohio. However, when modeled together as a connected network, they produce nearly 1.69 million trips—an increase of approximately 45 percent. Connections generate more trips by making each train significantly more useful, allowing passengers to seamlessly transfer to routes bound for broader destinations across the state and the country.   ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "jujob322",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "HEADING",
+            "id": "39xkh323",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Comprehensive Economic and Environmental Impacts",
+                  "decorations": []
+                }
+              }
+            ],
+            "headingData": {
+              "level": 2,
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "8rodd325",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The nearly $190 million combined benefit projection encompasses tourism-related economic growth, traveler cost savings, and public benefits derived from reduced road usage and emissions. Modeled annual impacts for the full six-service network within Ohio include:   ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "j5yym327",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "vpdss328",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "ajsh6329",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "e5mmp330",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Tourism and Economic Growth:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " $25.1 million in tourism-related economic growth.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "7louj334",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "va4oe335",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Visitor Spending:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " $14.7 million in spending at Ohio businesses.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "qi9hz339",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "0r9j4340",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Job Creation:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " About 200 jobs supported directly by visitor spending.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "xpscm344",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "bbgyd345",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Tax Revenue:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " $3.4 million in state and local tax revenue generated.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "bb87m349",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "1inoq350",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Roadway Cost Reduction:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " $88.3 million in modeled reduction in roadway costs.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "48m2k354",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "9vfdm355",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Avoided Crash Costs:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " $57.7 million in avoided crash costs.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "u4ug5359",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "kanrn360",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Traveler Savings:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " $18.1 million in traveler cost savings.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "4ftcr364",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "6abom365",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Traffic Reduction:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " 34.8 million vehicle miles removed from Ohio roads.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "ny9dh369",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "pfrx4370",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Emissions Reduction:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " 7,084 tons of CO2 equivalent reduced, creating an estimated $786,000 in avoided emissions damage.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "fhbj0277",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "hbsis282",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Rail Passengers Press Release: ",
+                  "decorations": []
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Passenger-Rail Network Could Bring Nearly $190 Million in Annual Benefits to Ohio, New Analysis Finds",
+                  "decorations": [
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "https://news.railpassengers.org/p/passenger-rail-network-could-bring",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "rnoj0120",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "All Aboard Ohio News Story: ",
+                  "decorations": []
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "A $190 Million Opportunity: Why Ohio Must Act Now on Passenger Rail | All Aboard Ohio",
+                  "decorations": [
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "https://www.allaboardohio.org/posts/ohios-passenger-rail-plan-study-results",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [],
+      "externalLinks": [
+        {
+          "url": "https://news.railpassengers.org/api/v1/file/9c0b7692-2591-46d5-abae-f8cf40d5ccd5.pdf",
+          "name": "news.railpassengers.org"
+        }
+      ],
+      "thumbnail": {
+        "src": "/images/generated/a80abdf0c3557ba71afb-640.webp",
+        "srcSet": "/images/generated/a80abdf0c3557ba71afb-320.webp 320w, /images/generated/a80abdf0c3557ba71afb-640.webp 640w, /images/generated/a80abdf0c3557ba71afb-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
+      "id": "50678c96-8d51-49d4-af3d-7c72fd35dbfc",
+      "title": "Federal Railroad Administration (FRA) Corridor ID Program Obligation Status Report",
+      "shortTitle": "FRA Corridor ID Status Report",
+      "summary": "An official federal tracking document detailing the current funding obligation status and development phases for all passenger rail corridors in the FRA's Corridor Identification and Development pipeline.",
+      "type": "Policy & Legislation",
+      "typeSlug": "policy-legislation",
+      "categories": [
+        {
+          "id": "bf1f2013-803b-49b4-818c-b8be4b6ac4a9",
+          "title": "Policy & Legislation",
+          "description": "Official government documents and tracking materials. This is for state and federal budget breakdowns, testimony transcripts, legislative bill tracking, and updates on the Federal Railroad Administration (FRA) Corridor ID pipeline."
+        }
+      ],
+      "path": "/policy-legislation/fra-corridor-id-status-report--50678c96-8d51-49d4-af3d-7c72fd35dbfc/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_78fe6109ada5430cb03177d2556a0f4a~mv2.jpg",
+      "created": "2026-11-17T23:18:21.252Z",
+      "updated": "2026-11-17T23:18:21.252Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "z8x6d3162",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "This official report from the Federal Railroad Administration (FRA) tracks the financial and developmental progress of all passenger rail corridors selected for the federal Corridor Identification and Development (CID) Program. It serves as an essential, frequently updated resource for transit advocates, planners, and policymakers to monitor exactly when proposed regional routes—such as those in Ohio and the wider Midwest—officially receive their allocated federal funding.",
+                  "decorations": []
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "j4i443167",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "br9qi3164",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The tracker categorizes nationwide rail projects by type (New High-Speed Rail, New Conventional Rail, Existing Route Extensions, and Existing Route Improvements) and logs the precise dates and amounts of federal grant obligations. It allows users to see which projects have successfully secured their initial $500,000 Step 1 scoping grants and which have advanced to receive multi-million dollar Step 2 Service Development Plan (SDP) awards.",
+                  "decorations": []
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [],
+      "externalLinks": [
+        {
+          "url": "https://railroads.dot.gov/elibrary/fras-corridor-id-obligation-status-report",
+          "name": "railroads.dot.gov"
+        }
+      ],
+      "thumbnail": {
+        "src": "/images/generated/69e13a6162e57893894d-640.webp",
+        "srcSet": "/images/generated/69e13a6162e57893894d-320.webp 320w, /images/generated/69e13a6162e57893894d-640.webp 640w, /images/generated/69e13a6162e57893894d-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
+      "id": "5619ed68-2f70-4c74-a13e-a1d438837720",
+      "title": "Flyer Template for All Aboard Ohio Chapter Meetings",
+      "shortTitle": "Chapter Meeting Flyer Template",
+      "summary": "Example template from All Aboard Ohio's Dayton Chapter.",
+      "type": "Templates & Toolkits",
+      "typeSlug": "templates-toolkits",
+      "categories": [
+        {
+          "id": "7d822588-340e-4e17-b3e4-f1adb4e118c3",
+          "title": "Templates & Toolkits",
+          "description": "Action-oriented assets for regional organizers and local advocates. This includes press release drafts, letter-to-the-editor outlines, forms, modular advocacy campaign guides, and standard operating procedures for local outreach."
+        }
+      ],
+      "path": "/templates-toolkits/chapter-meeting-flyer-template--5619ed68-2f70-4c74-a13e-a1d438837720/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_1da86b0033f14a54ac2d00f37d6f9a05~mv2.jpg",
+      "created": "2026-11-17T22:52:31.599Z",
+      "updated": "2026-11-17T22:52:31.599Z",
       "content": {
         "nodes": [
           {
@@ -30,7 +1103,38 @@
                 "id": "",
                 "nodes": [],
                 "textData": {
-                  "text": "Content goes here.",
+                  "text": "For editable files contact Ryan Pecaut (",
+                  "decorations": []
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "ryan@allaboardohio.org",
+                  "decorations": [
+                    {
+                      "type": "LINK",
+                      "linkData": {
+                        "link": {
+                          "url": "mailto:ryan@allaboardohio.org",
+                          "target": "BLANK"
+                        }
+                      }
+                    },
+                    {
+                      "type": "UNDERLINE"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": ")",
                   "decorations": []
                 }
               }
@@ -45,58 +1149,757 @@
       },
       "attachments": [
         {
-          "url": "https://www.allaboardohio.org/_files/ugd/903aba_a5971e118e34414ab52357db0f4a474d.pdf",
-          "name": "TriFold Brochure.pdf"
+          "url": "https://www.allaboardohio.org/_files/ugd/903aba_45680524b003456e887758f40948ed58.pdf",
+          "name": "Dayton Meeting Flyer.pdf"
         }
       ],
-      "externalLinks": []
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/351103e88222144e3961-640.webp",
+        "srcSet": "/images/generated/351103e88222144e3961-320.webp 320w, /images/generated/351103e88222144e3961-640.webp 640w, /images/generated/351103e88222144e3961-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
+      "id": "5e58772c-ef16-4e98-9179-e9f91c12180b",
+      "title": "Bringing More Trains to Ohio: The 60-Second Playbook",
+      "shortTitle": "Printable Handout: 60 Second Playbook",
+      "summary": "The All Aboard Ohio Transit Playbook Handout: Routes, Ridership, and Policy Solutions",
+      "type": "Printable & Handouts",
+      "typeSlug": "printable-handouts",
+      "categories": [
+        {
+          "id": "529c5287-bd31-4c97-a4c5-61598ab909e2",
+          "title": "Printable & Handouts",
+          "description": "High-level, visually engaging collateral meant for physical distribution or quick digital forwarding. This covers tri-fold brochures, quick-glance fact sheets, tabling materials, and event flyers designed for the general public."
+        }
+      ],
+      "path": "/toolkit/all-aboard-ohio-rack-card-50-second-playbook-to-improving-our-state--5e58772c-ef16-4e98-9179-e9f91c12180b/",
+      "featured": true,
+      "image": "https://static.wixstatic.com/media/cb899b_5166cd29fdd546399bfac27c3eac6f6c~mv2.png",
+      "created": "2026-10-30T22:55:27.118Z",
+      "updated": "2026-11-12T18:24:23.368Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "foo",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "A detailed transit advocacy infographic outlining the economic and logistical blueprint for passenger rail expansion across Ohio. The graphic features a statewide proposed rail map connecting major hubs like Cincinnati, Columbus, Cleveland, and Toledo. It breaks down core policy pillars for users, including projections for 1.7 million annual riders, strategies for lowering transit costs via best-value bidding, opportunities for sharing multi-state resources, and modeling success after Michigan's 110-mph Amtrak corridors.",
+                  "decorations": []
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          }
+        ]
+      },
+      "attachments": [
+        {
+          "url": "https://www.allaboardohio.org/_files/ugd/cb899b_75e21a78efaf45858b6f6ce17a1c9fc7.pdf",
+          "name": "All_Aboard_Ohio_Rack_Card_2026_v1.pdf"
+        }
+      ],
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/240e3edbca89e63c6925-640.webp",
+        "srcSet": "/images/generated/240e3edbca89e63c6925-320.webp 320w, /images/generated/240e3edbca89e63c6925-640.webp 640w, /images/generated/240e3edbca89e63c6925-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
+      "id": "780b9622-4c55-467a-bac8-e82e59e57fbe",
+      "title": "Accelerating Transit-Oriented Development: A Brookings Playbook for State-Level TOD Offices",
+      "shortTitle": "Brookings: State Playbook for TOD",
+      "summary": "States are finding new ways to accelerate housing development near public transit. This analysis examines how state policies, financing tools, and government coordination can expand housing supply and improve affordability.",
+      "type": "Research & Analysis",
+      "typeSlug": "research-analysis",
+      "categories": [
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
+        }
+      ],
+      "path": "/research-analysis/brookings-state-playbook-for-tod--780b9622-4c55-467a-bac8-e82e59e57fbe/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_6676cfbb921645e1bd3903cb247de775~mv2.jpg",
+      "created": "2026-11-17T23:09:25.965Z",
+      "updated": "2026-11-17T23:09:25.965Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "eupqq2617",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "This Brookings report by Ben Swedberg and Adie Tomer outlines a strategic playbook for state governments to address the national housing shortage by accelerating Transit-Oriented Development (TOD) through dedicated, state-level offices.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "x41do2619",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "jjy472620",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The Value of Transit-Oriented Development",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " TOD focuses on creating compact, walkable, mixed-use neighborhoods centered around transit stations. The report highlights several distinct advantages of this development model:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "s1dh42623",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "yat5t2624",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "o541t2625",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "zds152626",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Housing and Affordability:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " It provides the density required to build multifamily housing at scale while lowering the overall cost of living by reducing reliance on personal vehicles.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "788d32630",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "fdty62631",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Economic and Civic Benefits:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Concentrating residents and businesses increases job accessibility, boosts transit ridership to cover operating costs, maximizes tax revenues per acre, and lowers per-capita infrastructure and service costs for local governments.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "civmm2634",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "h50vr2635",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The Strategic Position of State Governments",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " While land use is typically a local issue, the report emphasizes that state governments are uniquely positioned to drive TOD due to their vast real estate and transit assets:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "tzghr2638",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "i00kw2639",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "9ms1u2640",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "55dfr2641",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "State-Owned Land:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Across 48 states, governments own over 33,500 acres of developable land within a quarter-mile of transit stations. Developing this land at even conservative densities could yield over 235,000 housing units nationwide.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "tzmpm2645",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "73xpj2646",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Transit Authority:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Many states directly operate transit services (like CT Transit) or appoint the leadership of regional transit agencies (such as the MBTA in Massachusetts or the Utah Transit Authority).",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "s56s52649",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "sjejp2650",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Establishing a Dedicated TOD Office",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " Currently, only 13 states have established designated TOD programs or offices. The report argues that centralizing TOD efforts into a specific office prevents logistical bottlenecks and maximizes state resources. Depending on existing state infrastructure, these offices are most effective when housed within state Departments of Transportation (DOTs), state-controlled transit agencies, or housing and commerce departments.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "jddw72653",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "qq5472654",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "A Playbook for State Implementation",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " The authors provide a multi-step framework for state leaders, legislators, and agencies to successfully implement and scale TOD initiatives:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "9ub4c2657",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "oijn02658",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "00n4c2659",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "gah6l2660",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Assess and Define:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " States must first survey state-owned land near transit to understand their asset inventory and formally codify the definition of TOD in state law to align stakeholders.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "l6zbi2664",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "hbm402665",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Centralize and Fund:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Governors should mandate interagency communication and designate a well-funded TOD office responsible for managing land databases, issuing Requests for Information (RFIs) to developers, and providing technical assistance to municipalities.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "9ufa92669",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "wfv962670",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Leverage State Power:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " TOD offices should actively pursue joint development partnerships on state-owned land (such as surfacing parking lots) and utilize value-capture tools like tax increment financing. They should also oversee the implementation of zoning reforms, such as reducing parking minimums or funding infrastructure upgrades.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "lsq722674",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "78ni62675",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Communicate Progress:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Because real estate development takes years, TOD offices must secure and promote early \"signature\" projects to build public goodwill while tracking long-term metrics like total housing units produced.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "attachments": [],
+      "externalLinks": [
+        {
+          "url": "https://www.brookings.edu/articles/state-led-transit-oriented-development/?b=1",
+          "name": "www.brookings.edu"
+        }
+      ],
+      "thumbnail": {
+        "src": "/images/generated/0ad8e9b599ccb765c32c-640.webp",
+        "srcSet": "/images/generated/0ad8e9b599ccb765c32c-320.webp 320w, /images/generated/0ad8e9b599ccb765c32c-640.webp 640w, /images/generated/0ad8e9b599ccb765c32c-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
     },
     {
       "id": "7e8ca1e5-912d-4000-a836-9d4af11ef44c",
       "title": "Economic Impact of the 3C+D Corridor Passenger Rail Project",
       "shortTitle": "Economic Impact of the 3C+D Corridor",
       "summary": "Overall, investment in the 3C+D corridor will contribute $106 million to $107 million to gross state product. After the initial investment, the corridor will contribute $25 million to $47 million to gross state product per year from the economic impact of ridership.",
-      "type": "Onboarding",
-      "typeSlug": "onboarding",
+      "type": "Research & Analysis",
+      "typeSlug": "research-analysis",
       "categories": [
         {
           "id": "c26ab23a-e83c-4824-aaef-dc92438e5d62",
-          "title": "Onboarding"
+          "title": "Onboarding & Advocacy 101",
+          "description": "Introductory materials for new members, volunteers, or local officials getting up to speed. This houses basic transit concepts, \"how to advocate\" primers, and introductory organizational guides."
+        },
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
         }
       ],
       "path": "/onboarding/economic-impact-of-the-3c-d-corridor-passenger-rail-project--7e8ca1e5-912d-4000-a836-9d4af11ef44c/",
       "featured": true,
-      "image": "https://static.wixstatic.com/media/cb899b_a0a121dbaa374badb6eae24455ded1f7~mv2.png",
-      "updated": "2026-11-10T21:38:43.141Z",
+      "image": "https://static.wixstatic.com/media/cb899b_e1543edf21784827a46efea4ee69fd15~mv2.jpg",
+      "created": "2026-10-30T21:22:58.684Z",
+      "updated": "2026-11-12T18:24:22.244Z",
       "content": {
         "nodes": []
       },
-      "attachments": [],
+      "attachments": [
+        {
+          "url": "https://www.allaboardohio.org/_files/ugd/cb899b_58e230d56eeb45659a2b303d79075d73.pdf",
+          "name": "Fiscal Analysis of Operating Costs.pdf"
+        }
+      ],
       "externalLinks": [],
       "thumbnail": {
-        "src": "/images/generated/c6e005440f1b7d2857fa-640.webp",
-        "srcSet": "/images/generated/c6e005440f1b7d2857fa-320.webp 320w, /images/generated/c6e005440f1b7d2857fa-640.webp 640w, /images/generated/c6e005440f1b7d2857fa-960.webp 960w",
+        "src": "/images/generated/11f3c84405ab8a7ee6ea-640.webp",
+        "srcSet": "/images/generated/11f3c84405ab8a7ee6ea-320.webp 320w, /images/generated/11f3c84405ab8a7ee6ea-640.webp 640w, /images/generated/11f3c84405ab8a7ee6ea-960.webp 952w",
         "width": 640,
-        "height": 635
+        "height": 498
       }
     },
     {
       "id": "84a1aa95-ecc9-4979-a528-c777cd95e09f",
-      "title": "Ohio Runs on Rail Book",
+      "title": "Ohio Runs on Rail Book: Intercity Passenger Rail to Connect Our State",
       "shortTitle": "Ohio Runs on Rail Book",
       "summary": "Intercity Passenger Rail to Connect Our State, an executive summary vision on passenger rail and Amtrak in Ohio.",
-      "type": "Analysis",
-      "typeSlug": "analysis",
+      "type": "Onboarding & Advocacy 101",
+      "typeSlug": "onboarding-advocacy-101",
       "categories": [
         {
           "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
-          "title": "Analysis"
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
+        },
+        {
+          "id": "c26ab23a-e83c-4824-aaef-dc92438e5d62",
+          "title": "Onboarding & Advocacy 101",
+          "description": "Introductory materials for new members, volunteers, or local officials getting up to speed. This houses basic transit concepts, \"how to advocate\" primers, and introductory organizational guides."
         }
       ],
       "path": "/analysis/ohio-runs-on-rail-book--84a1aa95-ecc9-4979-a528-c777cd95e09f/",
-      "featured": false,
+      "featured": true,
       "image": "https://static.wixstatic.com/media/cb899b_7384f4b00b89475799a020029a5fb0e5~mv2.png",
-      "updated": "2026-11-10T20:38:24.646Z",
+      "created": "2026-10-30T21:18:55.847Z",
+      "updated": "2026-11-17T22:30:06.719Z",
       "content": {
         "nodes": [
           {
@@ -169,24 +1972,1546 @@
       }
     },
     {
+      "id": "86bd1c2b-e31c-401c-b952-b7bab43e4db8",
+      "title": "The Transit Abundance Playbook: a collection of proposals for reducing American transit construction costs.",
+      "shortTitle": "IFP Transit Abundance Playbook",
+      "summary": "A comprehensive collection of policy solutions and strategies from the Institute for Progress designed to reduce America's high transit construction costs and accelerate project delivery.",
+      "type": "Research & Analysis",
+      "typeSlug": "research-analysis",
+      "categories": [
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
+        }
+      ],
+      "path": "/research-analysis/ifp-transit-abundance-playbook--86bd1c2b-e31c-401c-b952-b7bab43e4db8/",
+      "featured": true,
+      "image": "https://static.wixstatic.com/media/cb899b_f8ec7e29966c4971a976bb7e00fb1b45~mv2.jpg",
+      "created": "2026-11-17T23:28:10.985Z",
+      "updated": "2026-11-17T23:28:25.058Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "4ljjm3175",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The Transit Abundance Playbook, published by the Institute for Progress (IFP), is a collection of 15 targeted policy proposals aimed at addressing the systemic factors driving up transit construction costs and delaying project delivery in the United States. It tackles the reality that while the US once led the world in transit construction, it now leads in construction costs. The playbook argues that reversing this trend isn't about finding a single magic reform, but requires improving decision-making across the entire lifespan of a project, starting with early planning.",
+                  "decorations": []
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "clr583270",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "cc59z3177",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The playbook focuses on several key areas to achieve \"Transit Abundance,\" providing practical strategies for reform:",
+                  "decorations": []
+                }
+              }
+            ],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "huph03315",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "75ywg3179",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "rp7x63180",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "85v483181",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Planning:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Reforming federal programs to encourage and incentivize better, earlier project planning.",
+                          "decorations": []
+                        }
+                      }
+                    ],
+                    "paragraphData": {
+                      "textStyle": {
+                        "textAlignment": "AUTO"
+                      }
+                    }
+                  },
+                  {
+                    "type": "BULLETED_LIST",
+                    "id": "7q6wn3184",
+                    "nodes": [
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "4taop3185",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "2g4ti3186",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Reform Funding to Encourage Early Transit Planning",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Eric Goldwyn",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "y2a5s3189",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "ymgqm3190",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Focus Capital Investment Grants on Improved Project Delivery",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Stephanie Pollack",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "ch1ar3193",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "im1zy3194",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Use AI to Improve Transit Planning",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Lizzie Speed and Bennett Capozzi",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "ia8br3197",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "0ywva3198",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Share the Truth About Transit Project Failures",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Philip Plotch",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "9vk5m3370",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "j0vkv3458",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "2ta1p3201",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "99k3d3202",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Cost-Effective Design:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Adopting cost-saving best practices for what is built and bought.",
+                          "decorations": []
+                        }
+                      }
+                    ],
+                    "paragraphData": {
+                      "textStyle": {
+                        "textAlignment": "AUTO"
+                      }
+                    }
+                  },
+                  {
+                    "type": "BULLETED_LIST",
+                    "id": "v3wnb3205",
+                    "nodes": [
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "910fw3206",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "t6ylt3207",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Reduce Needless Bus Customization",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Rohan Aras and Alex Armlovich",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "cir603210",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "w1rjo3211",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Eliminate Redundant Subway Cross-Passages",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Brian Potter",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "x683d3509",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "fz9zo3597",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "x0z6l3214",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "z7ttv3215",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Procurement:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Changing procurement standards to reward value, transparency, and itemization rather than simply accepting the lowest bid, which often leads to expensive change orders.",
+                          "decorations": []
+                        }
+                      }
+                    ],
+                    "paragraphData": {
+                      "textStyle": {
+                        "textAlignment": "AUTO"
+                      }
+                    }
+                  },
+                  {
+                    "type": "BULLETED_LIST",
+                    "id": "hl3x23218",
+                    "nodes": [
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "oyc1r3219",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "jrolc3220",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "We Should Know How Much Transit Components Cost",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Alon Levy",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "z5hbt3223",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "58q8c3224",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Get the Best Value in Transit Procurement",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Anthony Potts",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "wodzt3648",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "o62a93736",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "4l1ko3227",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "3r5fq3228",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Utility, Agency, and Local Government Coordination:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Eliminating unnecessary veto points and third-party demands to streamline decision-making.",
+                          "decorations": []
+                        }
+                      }
+                    ],
+                    "paragraphData": {
+                      "textStyle": {
+                        "textAlignment": "AUTO"
+                      }
+                    }
+                  },
+                  {
+                    "type": "BULLETED_LIST",
+                    "id": "fwxuc3231",
+                    "nodes": [
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "741er3232",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "3rund3233",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Transit Projects Need a Single Decision-Maker",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "prwuh3784",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "j13os3872",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "cudsa3235",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "or0d43236",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Permitting:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Streamlining federal permitting rules, such as allowing environmental review self-certification and letting agencies conduct early works (like buying land) sooner, to accelerate project delivery.",
+                          "decorations": []
+                        }
+                      }
+                    ],
+                    "paragraphData": {
+                      "textStyle": {
+                        "textAlignment": "AUTO"
+                      }
+                    }
+                  },
+                  {
+                    "type": "BULLETED_LIST",
+                    "id": "nq4wa3239",
+                    "nodes": [
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "p820z3240",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "9gfy03241",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Let Agencies Do Their Own Environmental Review",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Jamey Tesler",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "jw9p13244",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "fdut03245",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Fast-Track Democratically Approved Transit Projects",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Hayden Clarkin",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "1qk0e3248",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "fmy5v3249",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Let Transit Agencies Buy Land",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Aidan Mackenzie",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "qq0iu3925",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "wkn594013",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "hlgzm3252",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "qty3q3253",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "State Capacity:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Strengthening transit agencies' ability to manage projects in-house to reduce reliance on consultants and create more direct control over costs.",
+                          "decorations": []
+                        }
+                      }
+                    ],
+                    "paragraphData": {
+                      "textStyle": {
+                        "textAlignment": "AUTO"
+                      }
+                    }
+                  },
+                  {
+                    "type": "BULLETED_LIST",
+                    "id": "sa8ha3256",
+                    "nodes": [
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "uaorq3257",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "nwirk3258",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Close America's Transit Automation Gap",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Andrew Miller",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "nqrby3261",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "g58q63262",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Put Transit Staff in Charge of Their Own Projects",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Paul Lewis",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "LIST_ITEM",
+                        "id": "3o1ne3265",
+                        "nodes": [
+                          {
+                            "type": "PARAGRAPH",
+                            "id": "dfaak3266",
+                            "nodes": [
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": "Loans Can Stabilize Transit Funding",
+                                  "decorations": [
+                                    {
+                                      "type": "ITALIC"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "TEXT",
+                                "id": "",
+                                "nodes": [],
+                                "textData": {
+                                  "text": " by Jackson Moore-Otto",
+                                  "decorations": []
+                                }
+                              }
+                            ],
+                            "paragraphData": {
+                              "textStyle": {
+                                "textAlignment": "AUTO"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "attachments": [],
+      "externalLinks": [
+        {
+          "url": "https://ifp.org/transit-abundance-playbook/",
+          "name": "ifp.org"
+        }
+      ],
+      "thumbnail": {
+        "src": "/images/generated/aa8354d187674426303a-640.webp",
+        "srcSet": "/images/generated/aa8354d187674426303a-320.webp 320w, /images/generated/aa8354d187674426303a-640.webp 640w, /images/generated/aa8354d187674426303a-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
+      "id": "9af9532b-a8c8-4ec2-9a63-058da9a27324",
+      "title": "Amtrak in Ohio: FY 2025 State Profile and Fact Sheet",
+      "shortTitle": "Amtrak State Fact Sheet 2025",
+      "summary": "This official FY 2025 fact sheet provides a comprehensive overview of Amtrak’s operational footprint in Ohio, detailing route ridership, station accessibility investments, route performance, and local economic impact.",
+      "type": "Data & Maps",
+      "typeSlug": "data-maps",
+      "categories": [
+        {
+          "id": "529c5287-bd31-4c97-a4c5-61598ab909e2",
+          "title": "Printable & Handouts",
+          "description": "High-level, visually engaging collateral meant for physical distribution or quick digital forwarding. This covers tri-fold brochures, quick-glance fact sheets, tabling materials, and event flyers designed for the general public."
+        },
+        {
+          "id": "40079fd6-c450-4a23-b52f-06238a7d2c75",
+          "title": "Data & Maps",
+          "description": "Hard numbers and geospatial visuals. This category separates raw facts from narrative research. It includes ridership statistics, Amtrak performance metrics, demographic impact datasets, GIS files, and official proposed route maps."
+        }
+      ],
+      "path": "/data-maps/amtrak-state-fact-sheet-2025--9af9532b-a8c8-4ec2-9a63-058da9a27324/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_e56144a64ca648f3a3a55a44b5d15385~mv2.jpg",
+      "created": "2026-11-17T22:48:24.161Z",
+      "updated": "2026-11-17T23:19:50.663Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "l7nbf2399",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "This official fact sheet details Amtrak’s operations, infrastructure investments, and economic impact in Ohio for Fiscal Year 2025. It provides a comprehensive overview of the state's current passenger rail footprint, making it a valuable reference document for advocacy and localized data.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "chi0c2402",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "5itn72403",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Key information included in this resource:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "4v0h02405",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "sufn52406",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "mmk8n2407",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "wim2f2408",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Service and Ridership:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Data detailing the 152,749 total passengers served across Ohio's seven active stations and three long-distance routes (the Cardinal, the Floridian, and the Lake Shore Limited).",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "y7vyd2412",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "budwg2413",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Infrastructure and ADA Upgrades:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " A breakdown of Amtrak's targeted $23.7 million investment to bring Ohio's stations into full Americans with Disabilities Act (ADA) compliance by the end of 2029.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "0qh8h2417",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "59sos2418",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Route Reliability:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Customer on-time performance (C-OTP) percentages for Ohio routes operating on tracks hosted by CSX and Norfolk Southern.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "7pq7h2422",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "4mw182423",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Economic Impact:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " A community-by-community breakdown of the nearly $38.6 million Amtrak spent on local procurement (primarily construction services) in Ohio, along with state employment and wage figures.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "attachments": [
+        {
+          "url": "https://www.allaboardohio.org/_files/ugd/cb899b_da48b3c9d4c3422d8548c1ea4cebed9d.pdf",
+          "name": "Amtrak_State_Fact_Sheet_OHIO25.pdf"
+        }
+      ],
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/3ad4858e5bf06bee1d31-640.webp",
+        "srcSet": "/images/generated/3ad4858e5bf06bee1d31-320.webp 320w, /images/generated/3ad4858e5bf06bee1d31-640.webp 640w, /images/generated/3ad4858e5bf06bee1d31-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
+    },
+    {
       "id": "a65bdd10-1df4-4e29-92b5-b6fb7177f3ef",
-      "title": "About AAO Trifold Brochure",
-      "shortTitle": "About AAO Trifold Brochure",
+      "title": "All Aboard Ohio \"Let Us Introduce Ourselves\" Introductory Brochure & Route Map",
+      "shortTitle": "The \"Let Us Introduce Ourselves\" Brochure",
       "summary": "High level information about who All Aboard Ohio is and the Ohio passenger rail route proposals.",
-      "type": "Templates",
-      "typeSlug": "templates",
+      "type": "Onboarding & Advocacy 101",
+      "typeSlug": "onboarding-advocacy-101",
       "categories": [
         {
           "id": "7d822588-340e-4e17-b3e4-f1adb4e118c3",
-          "title": "Templates"
+          "title": "Templates & Toolkits",
+          "description": "Action-oriented assets for regional organizers and local advocates. This includes press release drafts, letter-to-the-editor outlines, forms, modular advocacy campaign guides, and standard operating procedures for local outreach."
+        },
+        {
+          "id": "529c5287-bd31-4c97-a4c5-61598ab909e2",
+          "title": "Printable & Handouts",
+          "description": "High-level, visually engaging collateral meant for physical distribution or quick digital forwarding. This covers tri-fold brochures, quick-glance fact sheets, tabling materials, and event flyers designed for the general public."
+        },
+        {
+          "id": "c26ab23a-e83c-4824-aaef-dc92438e5d62",
+          "title": "Onboarding & Advocacy 101",
+          "description": "Introductory materials for new members, volunteers, or local officials getting up to speed. This houses basic transit concepts, \"how to advocate\" primers, and introductory organizational guides."
         }
       ],
       "path": "/templates/about-aao-trifold-brochure--a65bdd10-1df4-4e29-92b5-b6fb7177f3ef/",
       "featured": false,
-      "image": "https://static.wixstatic.com/media/cb899b_5c8d3935139e44f7b4c5e772d49471cf~mv2.png",
-      "updated": "2026-11-10T20:38:28.585Z",
+      "image": "https://static.wixstatic.com/media/cb899b_93dc942e15b747549d29e34df5458f0f~mv2.png",
+      "created": "2026-10-30T21:22:57.297Z",
+      "updated": "2026-11-17T23:19:03.525Z",
       "content": {
-        "nodes": []
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "af5oa2264",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "This introductory brochure provides a comprehensive overview of All Aboard Ohio's mission, history, and advocacy efforts for expanding passenger rail across the state and the broader Midwest. Designed for community outreach, the document includes:   ",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "25sr52266",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "bwfa42267",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "fluo22268",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "rtzs12269",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Organizational Overview:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " An explanation of All Aboard Ohio's 51-year history as a non-profit collaborating with government officials, media, and planning organizations to advance accessible public transit options.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "12cke2273",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "1pmc12274",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "The Case for Rail:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " A summary of how passenger rail development limits road congestion and invigorates local economies through job creation and enhanced mobility.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "e0fzs2278",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "1edol2279",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Proposed Route Guide:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " A quick-reference list and state map detailing proposed Ohio rail networks, including FRA Corridor ID Routes (such as the 3C&D Line and Midwest Connect), FRA Long Distance Routes, and expandable Amtrak lines.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "qn24b2283",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "g3q5y2284",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Call to Action:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " A message from AAO Chair Person Mitch Radokovich emphasizing the critical nature of the current rail movement and soliciting financial support to continue advocacy and education efforts.   ",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "attachments": [
         {
@@ -196,31 +3521,1193 @@
       ],
       "externalLinks": [],
       "thumbnail": {
-        "src": "/images/generated/bfa199ae77c49920ec92-640.webp",
-        "srcSet": "/images/generated/bfa199ae77c49920ec92-320.webp 320w, /images/generated/bfa199ae77c49920ec92-640.webp 640w, /images/generated/bfa199ae77c49920ec92-960.webp 960w",
+        "src": "/images/generated/858daf437887da7936b3-640.webp",
+        "srcSet": "/images/generated/858daf437887da7936b3-320.webp 320w, /images/generated/858daf437887da7936b3-640.webp 540w",
+        "width": 540,
+        "height": 473
+      }
+    },
+    {
+      "id": "cd64d631-93cf-495f-b1eb-4df0b1317cdd",
+      "title": "Empowering Regional Business Groups to Champion Transit-Oriented Development",
+      "shortTitle": "Brookings: Business Groups & TOD",
+      "summary": "This Brookings report details how regional business groups can leverage their economic expertise, polling resources, and civic networks to build powerful advocacy coalitions that overcome local barriers to transit-oriented development.",
+      "type": "Research & Analysis",
+      "typeSlug": "research-analysis",
+      "categories": [
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
+        }
+      ],
+      "path": "/research-analysis/brookings-business-groups-tod--cd64d631-93cf-495f-b1eb-4df0b1317cdd/",
+      "featured": false,
+      "image": "https://static.wixstatic.com/media/cb899b_6676cfbb921645e1bd3903cb247de775~mv2.jpg",
+      "created": "2026-11-17T23:09:27.320Z",
+      "updated": "2026-11-17T23:09:27.320Z",
+      "content": {
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "i0f3t2878",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "This report argues that regional business groups are uniquely equipped to champion TOD initiatives, and outlines how these groups can build internal support and integrate into broader civic coalitions.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "kx4bb2880",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "43oej2881",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "The Economic Case for TOD",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " TOD creates compact, walkable neighborhoods around transit stations, offering significant economic advantages that align with business interests. According to the report, TOD increases housing supply, reduces living costs by lowering reliance on personal vehicles, maximizes tax revenue per developed acre, lowers per-capita public service costs, and expands workforce accessibility for employers.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "7ykek2884",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "qthp42885",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Overcoming Market and Policy Barriers",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " Implementing TOD often requires overcoming strict zoning laws, infrastructure upgrade costs, and complex financing rules. Research demonstrates that coalitions are consistently the most effective way to enact policy reforms to overcome these local barriers, yet the specific role of regional business groups within these coalitions has been largely understudied.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "5az8p2888",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "73tlf2889",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Building Internal Support Among Members",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " Before a business group can advocate publicly, it must secure internal alignment. The report advises business group leaders to:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "hac7m2892",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "6wvpo2893",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "fq10t2894",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "w0d842895",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Focus on Relevant Economic Concerns:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Frame TOD not as a complex real estate issue, but as a solution to immediate member concerns like housing scarcity, high living expenses, and workforce job access.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "jcwfk2899",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "mo37v2900",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Identify Internal Champions:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Rely on a small group of knowledgeable, respected members to educate reticent peers, as peer-to-peer persuasion is highly effective.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "w9fpb2904",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "21as32905",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Utilize Physical Examples:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Move beyond data by organizing study trips to peer markets or providing 3D models to demonstrate successful TOD in action.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "4tyrr2908",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "jc7qm2909",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "External Coalitional Strategies",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " Once aligned, business groups offer specific strategic advantages to wider advocacy coalitions:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "pufhd2912",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "ux41a2913",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "aeost2914",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "1t1y42915",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Economic Analysis:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Business groups are well-suited to provide hard data on accessibility metrics, potential job creation (particularly for skilled trades), fiscal impacts, and return on investment.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "sbo482919",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "u5qns2920",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Polling and Testing:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Business groups possess the resources and experience to conduct targeted polling, helping coalitions understand public sentiment and design legislative strategies based on what local policymakers and their constituents actually want.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "wpgjv2924",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "up4k32925",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Adaptable Communication:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Business groups can operate effectively as both public communicators to sway uncertain policymakers and background orchestrators to broker transactional compromises across districts.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "0jupi2928",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "u6n9y2929",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Integrating with the Broader Civic Ecosystem",
+                  "decorations": [
+                    {
+                      "type": "BOLD"
+                    },
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": " The report concludes that for a coalition to succeed, other stakeholders—including transit advocacy nonprofits, labor groups, senior/student organizations, and elected officials—must proactively form strategic partnerships and coordinate communications with regional business groups to fully leverage their resources and networks.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          }
+        ]
+      },
+      "attachments": [],
+      "externalLinks": [
+        {
+          "url": "https://www.brookings.edu/articles/business-case-for-transit-oriented-development/",
+          "name": "www.brookings.edu"
+        }
+      ],
+      "thumbnail": {
+        "src": "/images/generated/0ad8e9b599ccb765c32c-640.webp",
+        "srcSet": "/images/generated/0ad8e9b599ccb765c32c-320.webp 320w, /images/generated/0ad8e9b599ccb765c32c-640.webp 640w, /images/generated/0ad8e9b599ccb765c32c-960.webp 952w",
         "width": 640,
-        "height": 576
+        "height": 498
       }
     },
     {
       "id": "d71e1482-6234-4778-9cec-e252f3da0cb2",
       "title": "Fiscal Analysis of Operating Costs of Passenger Rail in Ohio",
-      "shortTitle": "Fiscal Analysis of Operating Costs of Passenger Rail in Ohio",
-      "summary": "Fiscal Analysis Prepared for All Aboard Ohio by Scioto Analysis",
-      "type": "Printables",
-      "typeSlug": "printables",
+      "shortTitle": "Analysis: Operating Costs of Ohio Passenger Rail",
+      "summary": "Passenger Rail Financing and Projected Operating Costs for Ohio - Prepared for All Aboard Ohio by Scioto Analysis",
+      "type": "Research & Analysis",
+      "typeSlug": "research-analysis",
       "categories": [
         {
           "id": "529c5287-bd31-4c97-a4c5-61598ab909e2",
-          "title": "Printables"
+          "title": "Printable & Handouts",
+          "description": "High-level, visually engaging collateral meant for physical distribution or quick digital forwarding. This covers tri-fold brochures, quick-glance fact sheets, tabling materials, and event flyers designed for the general public."
+        },
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
         }
       ],
       "path": "/printables/fiscal-analysis-of-operating-costs-of-passenger-rail-in-ohio--d71e1482-6234-4778-9cec-e252f3da0cb2/",
-      "featured": false,
-      "image": null,
-      "updated": "2026-11-10T22:09:54.788Z",
+      "featured": true,
+      "image": "https://static.wixstatic.com/media/cb899b_dfa8962b4f724c0dac00d6c2bfc16fe9~mv2.png",
+      "created": "2026-11-10T22:09:54.788Z",
+      "updated": "2026-11-17T22:33:35.700Z",
       "content": {
-        "nodes": []
+        "nodes": [
+          {
+            "type": "PARAGRAPH",
+            "id": "zotzu1590",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "An analysis of 29 existing state-supported Amtrak lines and peer state financing models provides a concrete framework for estimating the operating costs and identifying potential funding mechanisms for Ohio's proposed 3C+D (Cincinnati-Dayton-Columbus-Cleveland) passenger rail corridor.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "b55wx1592",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "HEADING",
+            "id": "l7d031593",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Financing Models in Peer States",
+                  "decorations": []
+                }
+              }
+            ],
+            "headingData": {
+              "level": 2,
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "gbos51595",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "States with similar demographic distributions or robust rail networks utilize a variety of funding mechanisms to support their passenger rail operations:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "zortx1597",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "rg9w71598",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "36mcm1599",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "dh75y1600",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "North Carolina:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Serving as a strong demographic comparison to Ohio due to similar, distributed urban centers, North Carolina appropriated $45 million toward passenger rail across FY 2024 and FY 2025. This funding is drawn from the State Highway Fund—representing about 1.5% of a fund primarily driven by motor fuels taxes and license fees.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "056ok1604",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "rdy6u1605",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Virginia:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " With a highly utilized network generating 2.2 million rides in 2023, the Virginia Passenger Rail Authority operated with a $122.7 million budget in FY 2023. This operating budget is funded roughly in half by passenger ticket revenue, with the remainder coming from the state's Transportation Trust Fund (supported heavily by motor vehicle fuels and sales taxes).",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "8op3r1609",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "ptfht1610",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Minnesota:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " The state allocates funding for rail from its general fund, but has also recently established a dedicated passenger rail fund financed by 50 percent of state revenues from railroad property taxes.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "2twem1613",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "HEADING",
+            "id": "tf2ws1614",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Projected Ridership for Ohio's 3C+D Corridor",
+                  "decorations": []
+                }
+              }
+            ],
+            "headingData": {
+              "level": 2,
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "ryfa41616",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "At an estimated 250 miles, the 3C+D corridor aligns closely with the 280-mile average length of current state-supported Amtrak lines. Based on the performance percentiles of these 29 active routes, the analysis projects three potential ridership scenarios for Ohio:",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "gkjhz1618",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "xvytq1619",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "b59kb1620",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "a4oo91621",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Low Ridership:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " 110,000 annual riders (23 million passenger-miles)",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "gobjn1625",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "158a71626",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Average Ridership:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " 350,000 annual riders (48 million passenger-miles)",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "t1b181630",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "tjut51631",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "High Ridership:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " 580,000 annual riders (85 million passenger-miles)",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  },
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "oyfe71634",
+                    "nodes": [],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "HEADING",
+            "id": "ppqyi1635",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Cost Estimates and Budget Scenarios",
+                  "decorations": []
+                }
+              }
+            ],
+            "headingData": {
+              "level": 2,
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "fwyps1637",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "To project the annual financial commitment required for the 3C+D corridor, the analysis evaluated 27 different budget scenarios based on existing state spending patterns per track-mile, per-passenger, and per-passenger-mile.",
+                  "decorations": [
+                    {
+                      "type": "COLOR"
+                    }
+                  ]
+                }
+              }
+            ],
+            "paragraphData": {}
+          },
+          {
+            "type": "PARAGRAPH",
+            "id": "kxzkw1639",
+            "nodes": [],
+            "paragraphData": {
+              "textStyle": {
+                "textAlignment": "AUTO"
+              }
+            }
+          },
+          {
+            "type": "BULLETED_LIST",
+            "id": "5k45n1640",
+            "nodes": [
+              {
+                "type": "LIST_ITEM",
+                "id": "g95a51641",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "idnm61642",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Median Estimated Budget:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " The median projected operating budget across all scenarios is $9.1 million, which aligns with standard state-supported line budgets.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "ijxv81646",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "2hpwn1647",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Standard Budget Range:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " The middle 50% of the scenarios range from $5.7 million to $13.4 million, suggesting that a $13.4 million budget would provide a \"safe\" financial cushion for operations.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              },
+              {
+                "type": "LIST_ITEM",
+                "id": "wm2rb1651",
+                "nodes": [
+                  {
+                    "type": "PARAGRAPH",
+                    "id": "yxgn11652",
+                    "nodes": [
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": "Majority Under $10M:",
+                          "decorations": [
+                            {
+                              "type": "BOLD"
+                            },
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "TEXT",
+                        "id": "",
+                        "nodes": [],
+                        "textData": {
+                          "text": " Of the 27 modeled scenarios, the majority (14) resulted in an estimated budget of less than $10 million. Only 4 scenarios—driven by high-ridership, per-passenger metrics—exceeded $20 million.",
+                          "decorations": [
+                            {
+                              "type": "COLOR"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "paragraphData": {}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "attachments": [
         {
@@ -228,20 +4715,38 @@
           "name": "Download document 1"
         }
       ],
-      "externalLinks": []
+      "externalLinks": [],
+      "thumbnail": {
+        "src": "/images/generated/a4dc9f4310053d80a551-640.webp",
+        "srcSet": "/images/generated/a4dc9f4310053d80a551-320.webp 320w, /images/generated/a4dc9f4310053d80a551-640.webp 640w, /images/generated/a4dc9f4310053d80a551-960.webp 952w",
+        "width": 640,
+        "height": 498
+      }
     },
     {
       "id": "dde3ec9f-9dbf-401e-9c86-c2fe42261c28",
-      "title": "Cincinnati Station Information",
+      "title": "Cincinnati, Ohio Station Information",
       "shortTitle": "Cincinnati Station Information",
       "summary": "Insider information for traveling best through Cincinnati's Union Terminal - Provided by Union Terminal",
-      "type": "Uncategorized",
-      "typeSlug": "uncategorized",
-      "categories": [],
+      "type": "Station Guides & Rider Resources",
+      "typeSlug": "station-guides-rider-resources",
+      "categories": [
+        {
+          "id": "65bf1934-b070-4e34-8a61-a6870946ba7b",
+          "title": "Research & Analysis",
+          "description": "Deep-dive reports, white papers, and economic impact studies. This is the home for complex, long-form content"
+        },
+        {
+          "id": "2794c258-70dc-4776-b1d5-e4fd3708844b",
+          "title": "Station Guides & Rider Resources",
+          "description": "Public support files which aid in distributing guides, maps, or other useful information."
+        }
+      ],
       "path": "/uncategorized/cincinnati-station-information--dde3ec9f-9dbf-401e-9c86-c2fe42261c28/",
       "featured": false,
-      "image": null,
-      "updated": "2026-11-10T20:34:36.557Z",
+      "image": "https://static.wixstatic.com/media/903aba_c3b3a5ef59b446edae68a4234d0a0be4~mv2.jpg",
+      "created": "2026-10-30T21:22:54.749Z",
+      "updated": "2026-11-17T22:30:59.346Z",
       "content": {
         "nodes": [
           {
@@ -689,7 +5194,13 @@
           "url": "https://www.amtrak.com/stations/cin",
           "name": "www.amtrak.com"
         }
-      ]
+      ],
+      "thumbnail": {
+        "src": "/images/generated/1ecc44d2a5b9dc00e616-640.webp",
+        "srcSet": "/images/generated/1ecc44d2a5b9dc00e616-320.webp 320w, /images/generated/1ecc44d2a5b9dc00e616-640.webp 640w, /images/generated/1ecc44d2a5b9dc00e616-960.webp 900w",
+        "width": 640,
+        "height": 444
+      }
     }
   ],
   "blogPosts": [
