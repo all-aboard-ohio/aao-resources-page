@@ -454,15 +454,15 @@
 .site-header:not(.compact) .brand { position: absolute; left: calc(45% - 441px); top: 73px; }
 .site-header:not(.compact) .brand img { width: 223px; height: 54px; }
 .desktop-nav { position: absolute; left: calc(45% - 81px); top: 86px; width: min(529px, calc(55vw - 210px)); margin: 0; justify-content: space-between; gap: 0; @apply font-heading; font-size: 16px; line-height: 28px; font-weight: 600; text-transform: uppercase; }
-.desktop-nav > a, .desktop-nav > details { padding-inline: 14px; border-left: 1px solid #ffffff50; }
+.desktop-nav > a, .desktop-nav > details { padding-inline: 14px; border-left: 1px solid #fff; }
 .desktop-nav > :first-child { border-left: 0; }
-.desktop-nav > a[aria-current] { border-bottom: 0; padding-block: 0; @apply text-aao-dark-blue; }
+.desktop-nav > a[aria-current] { border-bottom: 0; border-left-color: #fff; padding-block: 0; @apply text-aao-dark-blue; }
 .nav-group summary { list-style: none; margin: 0; }
 .nav-group summary::-webkit-details-marker { display: none; }
 .resource-menu > summary { @apply text-aao-dark-blue; }
 .nav-group ul { top: 28px; left: 0; text-transform: none; font-size: 13px; }
 .donate-link { @apply bg-aao-light-red; border-radius: 9999px; min-width: 124px; padding: 9px 18px; font-size: 14px; text-transform: uppercase; box-shadow: 0 0 14px #d5585533; }
-.site-header:not(.compact) > .header-inner > .donate-link { position: absolute; right: 5.7%; top: 82px; width: 134px; min-width: 134px; height: 36px; padding: 0; font-size: 15px; }
+.site-header:not(.compact) > .header-inner > .donate-link { position: absolute; left: min(calc(45% + 471px), calc(100% - 150px)); top: 82px; width: 134px; min-width: 134px; height: 36px; padding: 0; font-size: 15px; }
 .compact { border-bottom: 1px solid #ffffff40; }
 .compact .header-inner { width: calc(100% - 48px); min-height: 67px; }
 .compact .brand img { width: 145px; height: 42px; }
