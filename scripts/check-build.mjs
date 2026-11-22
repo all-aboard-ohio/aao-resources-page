@@ -16,7 +16,7 @@ const publicHtml = new Set(['index.html', '404.html', 'privacy/index.html',
   ...getCategoryDirectory(snapshot.resources).map(category => `${category.slug}/index.html`),
   ...snapshot.resources.map(resource => `${resource.path.slice(1)}index.html`)]);
 const publicFiles = new Set(['.nojekyll', 'CNAME', 'robots.txt', 'sitemap.xml',
-  'header-logo.svg', 'header-stripes.svg', 'footer-logo.svg',
+  'header-logo.svg', 'header-stripes.svg', 'footer-logo.svg', 'favicon.png',
   'data/resources.json', 'data/routes.json']);
 for (const category of getCategoryDirectory(snapshot.resources)) {
   const html = await readFile(resolve(root, category.slug, 'index.html'), 'utf8');
@@ -39,6 +39,8 @@ assert.equal(paths.size, snapshot.resources.length, 'Resource routes must be uni
 assert(Array.isArray(snapshot.blogPosts) && snapshot.blogPosts.length <= 3, 'Expected up to three blog stories');
 const homepage = await readFile(resolve(root, 'index.html'), 'utf8');
 assert(homepage.includes('<title>All Aboard Ohio Resources | Tools for the Track Ahead</title>'), 'Homepage title is incorrect');
+assert(homepage.includes('rel="icon" type="image/png" sizes="192x192" href="/favicon.png"'), 'AAO favicon is missing');
+assert(homepage.includes('rel="apple-touch-icon" href="/favicon.png"'), 'AAO touch icon is missing');
 assert(!homepage.includes('id="wix-site-script"'), 'Tracking script must not load before consent');
 assert(homepage.includes('https://all-aboard-ohio.github.io/aao-lab-components/aao-banner.js'), 'Shared AAO notification component script is missing');
 assert(homepage.includes('<aao-notification config-url="https://raw.githubusercontent.com/all-aboard-ohio/aao-lab-components/main/banner.json" mode="standard"></aao-notification>'), 'Shared AAO notification feed is missing');
