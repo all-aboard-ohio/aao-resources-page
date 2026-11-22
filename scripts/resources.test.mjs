@@ -9,13 +9,24 @@ import { createImageVariants } from './optimize-images.mjs';
 import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent, publishedResourceRoutes, resolveResourcePath, compareResources } from './resource-data.mjs';
 import { normalizeWixRichContent } from './wix-rich-content.mjs';
 import { renderRichContent, render, resourceShareURL } from '../.server/entry-server.js';
-import { getCategoryDirectory, resourceInCategory } from '../src/data/categories.js';
+import { categoryHeading, getCategoryDirectory, resourceInCategory } from '../src/data/categories.js';
 import privacyConfig from '../src/data/privacy-config.js';
 import { CONSENT_DURATION, consentRecord, parseConsent, trackingConfigured, mayLoadTracking, loadWixSiteScript, WIX_SCRIPT_URL } from '../src/utils/privacy.mjs';
 
 const text = (value, decorations = []) => ({ type: 'TEXT', textData: { text: value, decorations } });
 const paragraph = value => ({ type: 'PARAGRAPH', nodes: [text(value)] });
 const renderNodes = nodes => renderRichContent(publicRichContent(normalizeWixRichContent({ nodes })));
+
+test('category headings do not duplicate an existing Resources suffix', () => {
+  assert.equal(categoryHeading('Station Guides & Rider Resources'), 'Station Guides & Rider Resources');
+  assert.equal(categoryHeading('  Rider RESOURCES  '), 'Rider RESOURCES');
+  assert.equal(categoryHeading('Research & Analysis'), 'Research & Analysis Resources');
+  assert.equal(categoryHeading('Resources Planning'), 'Resources Planning Resources');
+  const html = render('/station-guides-rider-resources/', null);
+  assert.match(html, /<h1>Station Guides &amp; Rider Resources<\/h1>/);
+  assert.match(html.replace(/<!--.*?-->/g, ''), /Search station guides &amp; rider resources<\/label>/);
+  assert(!/resources\s+resources/i.test(html));
+});
 
 test('resource share URLs include attribution and no briefcase routes', () => {
   const url = new URL(resourceShareURL({ path: '/analysis/example/' }));

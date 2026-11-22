@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { categoryHeading } from '../src/data/categories.js';
 
 export const SOCIAL_WIDTH = 1200;
 export const SOCIAL_HEIGHT = 630;
@@ -136,7 +137,7 @@ export async function generateSocialImages(snapshot, categories) {
   }
   const categoryImages = new Map();
   for (const category of categories) {
-    categoryImages.set(category.slug, await save(await renderSocialImage({ title: category.title, kind: 'category', logo }), 'category', `${category.title} resources | All Aboard Ohio`));
+    categoryImages.set(category.slug, await save(await renderSocialImage({ title: category.title, kind: 'category', logo }), 'category', `${categoryHeading(category.title)} | All Aboard Ohio`));
   }
   return { fallback, resources, categories: categoryImages };
 }

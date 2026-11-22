@@ -3,7 +3,7 @@ import { resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { render } from '../.server/entry-server.js';
 import { SITE_URL } from './resource-data.mjs';
-import { getCategoryDirectory } from '../src/data/categories.js';
+import { categoryHeading, getCategoryDirectory } from '../src/data/categories.js';
 import privacyConfig from '../src/data/privacy-config.js';
 import { generateSocialImages, socialDescription, SOCIAL_WIDTH, SOCIAL_HEIGHT } from './social-images.mjs';
 
@@ -16,7 +16,7 @@ const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '
 const pages = [
   { path: '/', title: 'All Aboard Ohio Resources | Tools for the Track Ahead', description: 'Passenger rail and public transit resources for Ohio. Find research, policy briefs, maps, printable handouts, and advocacy tools from All Aboard Ohio.', schemaType: 'WebSite' },
   { path: '/privacy/', title: 'Privacy & Cookies | All Aboard Ohio', description: 'Resource-library privacy information and choices.', noindex: !privacyConfig.privacyReviewed },
-  ...categories.map(category => ({ path: `/${category.slug}/`, title: `${category.title} Resources | All Aboard Ohio`, description: category.description || `Explore ${category.title.toLowerCase()} resources from All Aboard Ohio.`, image: social.fallback, schemaType: 'CollectionPage' })),
+  ...categories.map(category => ({ path: `/${category.slug}/`, title: `${categoryHeading(category.title)} | All Aboard Ohio`, description: category.description || `Explore ${categoryHeading(category.title).toLowerCase()} from All Aboard Ohio.`, image: social.fallback, schemaType: 'CollectionPage' })),
   ...snapshot.resources.map(resource => ({ path: resource.path, title: `Resource: ${resource.shortTitle || resource.title} | All Aboard Ohio`, description: resource.summary || `Explore ${resource.shortTitle || resource.title}, a ${resource.type.toLowerCase()} resource from All Aboard Ohio for passenger rail and transit advocacy.`, image: social.resources.get(resource.id), schemaType: 'WebPage' })),
   { path: '/404.html', title: 'Resource Not Found | All Aboard Ohio', description: 'This resource is unavailable.', notFound: true },
 ];

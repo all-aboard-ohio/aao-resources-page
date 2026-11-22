@@ -1,5 +1,10 @@
 import { slugify } from '../../scripts/resource-data.mjs';
 
+export function categoryHeading(title) {
+  const name = title.trim();
+  return /\bresources$/i.test(name) ? name : `${name} Resources`;
+}
+
 export function resourceInCategory(resource, category) {
   return resource.categories.some(reference => reference.id === category.id) || resource.typeSlug === category.slug;
 }
