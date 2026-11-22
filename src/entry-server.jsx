@@ -1,6 +1,7 @@
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import App from './App.jsx';
 import RichContent from './components/RichContent.jsx';
+export { resourceShareURL } from './components/ResourceHeader.jsx';
 
 export function render(path, notice) {
   return renderToString(<App path={path} notice={notice} />);

@@ -38,7 +38,7 @@ for (const item of [...snapshot.resources, ...(snapshot.blogPosts || [])]) {
 assert.equal(paths.size, snapshot.resources.length, 'Resource routes must be unique');
 assert(Array.isArray(snapshot.blogPosts) && snapshot.blogPosts.length <= 3, 'Expected up to three blog stories');
 const homepage = await readFile(resolve(root, 'index.html'), 'utf8');
-assert(homepage.includes('<title>Tools for the Track Ahead | All Aboard Ohio</title>'), 'Homepage title is incorrect');
+assert(homepage.includes('<title>All Aboard Ohio Resources | Tools for the Track Ahead</title>'), 'Homepage title is incorrect');
 assert(!homepage.includes('id="wix-site-script"'), 'Tracking script must not load before consent');
 assert(homepage.includes('https://all-aboard-ohio.github.io/aao-lab-components/aao-banner.js'), 'Shared AAO notification component script is missing');
 assert(homepage.includes('<aao-notification config-url="https://raw.githubusercontent.com/all-aboard-ohio/aao-lab-components/main/banner.json" mode="standard"></aao-notification>'), 'Shared AAO notification feed is missing');
@@ -56,6 +56,7 @@ for (const [index, post] of snapshot.blogPosts.entries()) {
 if (snapshot.blogPosts.length) assert(homepage.indexOf('id="intent-heading"') < homepage.indexOf('id="blog-heading"') && homepage.indexOf('id="blog-heading"') < homepage.indexOf('id="join-heading"'), 'Blog section is in the wrong position');
 for (const resource of snapshot.resources) {
   const html = await readFile(resolve(root, `.${resource.path}index.html`), 'utf8');
+  assert(html.includes(`<title>Resource: ${(resource.shortTitle || resource.title).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]))} | All Aboard Ohio</title>`), 'Resource title metadata is incorrect');
   assert(html.includes('rel="canonical"'), 'Canonical metadata missing');
   assert(html.includes('<h1>'), 'Static article HTML missing');
   assert(html.includes('id="root"><'), 'Empty client-only page');

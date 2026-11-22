@@ -14,10 +14,10 @@ const social = await generateSocialImages(snapshot, []);
 const template = await readFile(resolve(root, 'dist/index.html'), 'utf8');
 const escape = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
 const pages = [
-  { path: '/', title: 'Tools for the Track Ahead | All Aboard Ohio', description: 'Passenger rail and public transit resources for Ohio. Find research, policy briefs, maps, printable handouts, and advocacy tools from All Aboard Ohio.', schemaType: 'WebSite' },
+  { path: '/', title: 'All Aboard Ohio Resources | Tools for the Track Ahead', description: 'Passenger rail and public transit resources for Ohio. Find research, policy briefs, maps, printable handouts, and advocacy tools from All Aboard Ohio.', schemaType: 'WebSite' },
   { path: '/privacy/', title: 'Privacy & Cookies | All Aboard Ohio', description: 'Resource-library privacy information and choices.', noindex: !privacyConfig.privacyReviewed },
   ...categories.map(category => ({ path: `/${category.slug}/`, title: `${category.title} Resources | All Aboard Ohio`, description: category.description || `Explore ${category.title.toLowerCase()} resources from All Aboard Ohio.`, image: social.fallback, schemaType: 'CollectionPage' })),
-  ...snapshot.resources.map(resource => ({ path: resource.path, title: `${resource.shortTitle || resource.title} | All Aboard Ohio`, description: resource.summary || `Explore ${resource.shortTitle || resource.title}, a ${resource.type.toLowerCase()} resource from All Aboard Ohio for passenger rail and transit advocacy.`, image: social.resources.get(resource.id), schemaType: 'WebPage' })),
+  ...snapshot.resources.map(resource => ({ path: resource.path, title: `Resource: ${resource.shortTitle || resource.title} | All Aboard Ohio`, description: resource.summary || `Explore ${resource.shortTitle || resource.title}, a ${resource.type.toLowerCase()} resource from All Aboard Ohio for passenger rail and transit advocacy.`, image: social.resources.get(resource.id), schemaType: 'WebPage' })),
   { path: '/404.html', title: 'Resource Not Found | All Aboard Ohio', description: 'This resource is unavailable.', notFound: true },
 ];
 for (const page of pages) {

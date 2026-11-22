@@ -8,7 +8,7 @@ import { renderSocialImage, readableColor, whiteContrast, socialDescription } fr
 import { createImageVariants } from './optimize-images.mjs';
 import { safeUrl, normalizeBlogPost, normalizeResource, publicRichContent, publishedResourceRoutes, resolveResourcePath, compareResources } from './resource-data.mjs';
 import { normalizeWixRichContent } from './wix-rich-content.mjs';
-import { renderRichContent, render } from '../.server/entry-server.js';
+import { renderRichContent, render, resourceShareURL } from '../.server/entry-server.js';
 import { getCategoryDirectory, resourceInCategory } from '../src/data/categories.js';
 import privacyConfig from '../src/data/privacy-config.js';
 import { CONSENT_DURATION, consentRecord, parseConsent, trackingConfigured, mayLoadTracking, loadWixSiteScript, WIX_SCRIPT_URL } from '../src/utils/privacy.mjs';
@@ -16,6 +16,14 @@ import { CONSENT_DURATION, consentRecord, parseConsent, trackingConfigured, mayL
 const text = (value, decorations = []) => ({ type: 'TEXT', textData: { text: value, decorations } });
 const paragraph = value => ({ type: 'PARAGRAPH', nodes: [text(value)] });
 const renderNodes = nodes => renderRichContent(publicRichContent(normalizeWixRichContent({ nodes })));
+
+test('resource share URLs include attribution and no briefcase routes', () => {
+  const url = new URL(resourceShareURL({ path: '/analysis/example/' }));
+  assert.equal(url.pathname, '/analysis/example/');
+  assert.equal(url.searchParams.get('utm_source'), 'share');
+  assert.equal(url.searchParams.get('utm_medium'), 'social');
+  assert.match(render('/briefcase/', null), /Resource Not Found/);
+});
 
 test('social previews use readable sampled colors and bounded descriptions', () => {
   for (const color of [[255, 255, 255], [230, 190, 100], [100, 160, 220], [1, 35, 69], [0, 0, 0]]) {
@@ -43,27 +51,22 @@ test('resource and category share images render escaped long titles at 1200 by 6
   }
 });
 
-test('resource social titles share a left inset and stay vertically centered at different lengths', async () => {
+test('resource social previews include the requested three-color footer', async () => {
   const logo = await readFile(new URL('../public/header-logo.svg', import.meta.url));
-  for (const title of ['Ohio Rail', 'IFP Transit Abundance Playbook']) {
-    const output = await renderSocialImage({ title, logo });
-    const { data, info } = await sharp(output).removeAlpha().raw().toBuffer({ resolveWithObject: true });
-    let firstRow = info.height;
-    let lastRow = 0;
-    let firstColumn = info.width;
-    for (let row = 120; row < info.height; row += 1) {
-      for (let column = 480; column < info.width; column += 1) {
-        const offset = (row * info.width + column) * info.channels;
-        if (data[offset] > 230 && data[offset + 1] > 230 && data[offset + 2] > 230) {
-          firstRow = Math.min(firstRow, row);
-          lastRow = Math.max(lastRow, row);
-          firstColumn = Math.min(firstColumn, column);
-        }
-      }
+  const output = await renderSocialImage({ title: 'Ohio Rail', category: 'Research & Analysis', description: 'Passenger rail resources', logo });
+  const { data, info } = await sharp(output).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const pixel = column => [...data.subarray((615 * info.width + column) * info.channels, (615 * info.width + column) * info.channels + 3)];
+  assert(pixel(100)[2] > pixel(100)[0]);
+  assert(pixel(790)[0] > 200 && pixel(790)[1] > 200);
+  assert(pixel(1100)[2] > pixel(1100)[0] && pixel(1100)[0] < 30);
+  let logoPixels = 0;
+  for (let row = 515; row < 560; row += 1) {
+    for (let column = 880; column < 1131; column += 1) {
+      const offset = (row * info.width + column) * info.channels;
+      if (data[offset] < 210 && Math.abs(data[offset] - data[offset + 2]) < 8) logoPixels += 1;
     }
-    assert(Math.abs((firstRow + lastRow) / 2 - 315) <= 2, `Title is not vertically centered: ${title}`);
-    assert(firstColumn >= 528 && firstColumn < 535, `Title is not left-aligned: ${title}`);
   }
+  assert(logoPixels > 100, 'Gray AAO logo must remain visible on white');
 });
 
 test('Wix tracking requires consent and completed privacy/platform reviews', () => {
@@ -154,19 +157,19 @@ test('header has the source logo and Resources in place of More, with no login',
   const html = render('/', null);
   const nav = html.match(/<nav class="desktop-nav".*?<\/nav>/s)?.[0];
   assert(nav);
-  assert.match(nav, /<summary>Resources<\/summary>/);
-  assert.match(nav, /href="\/analysis\/"/);
+  assert.match(nav, /href="\/" aria-current="page">Resources<\/a>/);
+  assert(!nav.includes('<details'));
   assert(!html.includes('<summary>More</summary>'));
   assert(!html.includes('Log In'));
   assert.match(html, /src="\/header-logo.svg"/);
 });
 
-test('compact resource and privacy headers retain the shared mobile navigation', () => {
+test('resource and privacy headers include accessible search and navigation controls', () => {
   for (const path of ['/privacy/', '/analysis/ohio-runs-on-rail-book--84a1aa95-ecc9-4979-a528-c777cd95e09f/']) {
     const html = render(path, null);
-    assert.match(html, /site-header compact/);
-    assert.equal((html.match(/class="mobile-nav"/g) || []).length, 1);
-    assert.match(html, /aria-label="Mobile navigation"/);
+    assert.match(html, /class="utility-header"/);
+    assert.match(html, /aria-label="Search resources"/);
+    assert(!html.includes('Briefcase'));
     assert.match(html, /aria-label="Open navigation menu"/);
     assert(!html.includes('class="desktop-nav"'));
   }
@@ -179,6 +182,7 @@ test('downloads and external destinations appear before the long article content
     assert(html.indexOf('class="resource-quick-links"') < html.indexOf('class="prose-content"'));
     assert.match(html, /class="resource-actions"/);
     assert.match(html, /aria-label="Resource downloads and external links"/);
+    assert.match(html, /<nav class="resource-quick-links"[^>]*>.*class="resource-share"/);
   }
   assert.match(download.replace(/<!--.*?-->/g, ''), /Download All Aboard Ohio/);
   assert.match(external.replace(/<!--.*?-->/g, ''), /Visit (?:www\.)?amtrak.com/);
@@ -336,7 +340,7 @@ test('homepage preserves the reference category tabs, lead story and smaller-res
 test('resource presentation keeps the blog title band without the homepage navigation', () => {
   const html = render('/uncategorized/cincinnati-station-information--dde3ec9f-9dbf-401e-9c86-c2fe42261c28/', null);
   assert.match(html, /resource-title-band/);
-  assert.match(html, /site-header compact/);
+  assert.match(html, /class="utility-header"/);
   assert(!html.includes('desktop-nav'));
 });
 
@@ -427,4 +431,22 @@ test('homepage action section contains four working destinations between feature
   assert.match(html, /href="\/analysis\/"/);
   assert.match(html, /class="home-page"/);
   assert(!render('/not-a-resource/', null).includes('class="home-page"'));
+});
+
+test('social title baselines are 115 percent of the rendered font size', async () => {
+  const logo = await readFile(new URL('../public/header-logo.svg', import.meta.url));
+  const image = await renderSocialImage({ title: 'Hg\nHg', logo });
+  const { data, info } = await sharp(image).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const rows = [];
+  for (let row = 130; row < 335; row += 1) {
+    let hasText = false;
+    for (let column = 69; column < 400; column += 1) {
+      const offset = (row * info.width + column) * info.channels;
+      if (data[offset] < 40 && data[offset + 1] < 40 && data[offset + 2] < 40) { hasText = true; break; }
+    }
+    if (hasText && (rows.length === 0 || row > rows.at(-1).end + 1)) rows.push({ start: row, end: row });
+    else if (hasText) rows.at(-1).end = row;
+  }
+  assert.equal(rows.length, 2);
+  assert(Math.abs((rows[1].start - rows[0].start) - 72 * 1.15) <= 2);
 });

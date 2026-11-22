@@ -1,5 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
-import { ArrowLeft, ArrowRight, AtSign, CalendarDays, ChartNoAxesCombined, ChevronRight, ExternalLink, FileText, Files, Image, Landmark, Menu, Search, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, AtSign, CalendarDays, ChartNoAxesCombined, ChevronRight, ExternalLink, FileText, Files, Image, Landmark, Search, X } from 'lucide-react';
 import snapshot from './data/resources.json';
 import RichContent, { ExternalLinkAnchor } from './components/RichContent.jsx';
 import { slugify, compareResources } from '../scripts/resource-data.mjs';
@@ -7,25 +7,17 @@ import { getCategoryDirectory, resourceInCategory } from './data/categories.js';
 import PrivacyControls from './components/PrivacyControls.jsx';
 import Privacy from './pages/Privacy.jsx';
 import { PREFERENCES_EVENT } from './utils/privacy.mjs';
+import { ResourceUIProvider, InteractiveHeader, ResourceOverlays, ResourceShare } from './components/ResourceHeader.jsx';
 
 const MAIN_SITE = 'https://www.allaboardohio.org';
-const groups = [
-  { title: 'About', links: [['About AAO', '/about'], ["Ohio's Amtrak Routes", '/amtrak-rail-routes'], ['1979 Campaign', '/1979'], ['Join', '/join'], ['Donate', '/donate'], ['Advocacy', '/advocacy'], ['Accomplishments', '/about/accomplishments'], ['Press', '/about/press'], ['Work With Us', '/work-with-us'], ['Business Support', '/support']] },
-  { title: 'Events', links: [['All Events', '/events'], ['Ohio Rail Summit 2027', '/ohio-rail-summit'], ['Statewide Meetings', '/events/statewide'], ['AAO Chapters', '/chapters']] },
-];
-
 function Brand({ full = false }) {
   return <a href={MAIN_SITE} className="brand" aria-label="All Aboard Ohio home"><img src={full ? '/footer-logo.svg' : '/header-logo.svg'} width={full ? 220 : 223} height={full ? 180 : 54} alt="All Aboard Ohio" /></a>;
 }
 
-function Header({ compact }) {
-  const categories = getCategoryDirectory(snapshot.resources);
-  return <header className={compact ? 'site-header compact' : 'site-header'}><span className="header-red-stripe" aria-hidden="true" /><div className="header-inner"><Brand />
-    {compact ? <a href="/" className="back-link"><ArrowLeft size={17} aria-hidden="true" />Back to Resources</a> : <>
-      <nav className="desktop-nav" aria-label="Main navigation"><a href={`${MAIN_SITE}/`}>Home</a>{groups.map(group => <details className="nav-group" key={group.title}><summary>{group.title}</summary><ul>{group.links.map(([label, path]) => <li key={path}><a href={MAIN_SITE + path}>{label}</a></li>)}</ul></details>)}<a href={`${MAIN_SITE}/news`}>News</a><a href={`${MAIN_SITE}/shop`}>Shop</a><details className="nav-group resource-menu"><summary>Resources</summary><ul><li><a href="/">All resources</a></li>{categories.map(category => <li key={category.id}><a href={`/${category.slug}/`}>{category.title}</a></li>)}</ul></details></nav>
-      <a href={`${MAIN_SITE}/donate`} className="donate-link">Donate<ArrowRight size={15} aria-hidden="true" /></a>
-    </>}
-    <details className="mobile-nav"><summary aria-label="Open navigation menu"><Menu size={30} strokeWidth={2} aria-hidden="true" /></summary><nav aria-label="Mobile navigation"><a href={`${MAIN_SITE}/`}>Home</a>{groups.map(group => <details key={group.title}><summary>{group.title}</summary>{group.links.map(([label, path]) => <a key={path} href={MAIN_SITE + path}>{label}</a>)}</details>)}<a href={`${MAIN_SITE}/news`}>News</a><a href={`${MAIN_SITE}/shop`}>Shop</a><a href={`${MAIN_SITE}/donate`}>Donate</a><details><summary>Resources</summary><a href="/">All resources</a>{categories.map(category => <a href={`/${category.slug}/`} key={category.id}>{category.title}</a>)}</details></nav></details>
+function Header() {
+  return <header className="site-header home-large-header"><span className="header-red-stripe" aria-hidden="true" /><div className="header-inner"><Brand />
+    <nav className="desktop-nav" aria-label="Main navigation"><a href={`${MAIN_SITE}/`}>Home</a><a href={`${MAIN_SITE}/about`}>About</a><a href={`${MAIN_SITE}/events`}>Events</a><a href={`${MAIN_SITE}/news`}>News</a><a href={`${MAIN_SITE}/shop`}>Shop</a><a href="/" aria-current="page">Resources</a></nav>
+    <a href={`${MAIN_SITE}/donate`} className="donate-link">Donate<ArrowRight size={15} aria-hidden="true" /></a>
   </div></header>;
 }
 
@@ -162,8 +154,7 @@ function Home() {
 }
 
 function ResourceQuickLinks({ resource }) {
-  if (!resource.attachments.length && !resource.externalLinks.length) return null;
-  return <nav className="resource-quick-links" aria-label="Resource downloads and external links">{resource.attachments.map(item => <ExternalLinkAnchor key={item.url} href={item.url} className="resource-quick-link"><FileText size={18} aria-hidden="true" /><span>Download {item.name}</span></ExternalLinkAnchor>)}{resource.externalLinks.map(item => <ExternalLinkAnchor key={item.url} href={item.url} className="resource-quick-link"><span>Visit {item.name}</span></ExternalLinkAnchor>)}</nav>;
+  return <nav className="resource-quick-links" aria-label="Resource downloads and external links">{resource.attachments.map(item => <ExternalLinkAnchor key={item.url} href={item.url} className="resource-quick-link"><FileText size={18} aria-hidden="true" /><span>Download {item.name}</span></ExternalLinkAnchor>)}{resource.externalLinks.map(item => <ExternalLinkAnchor key={item.url} href={item.url} className="resource-quick-link"><span>Visit {item.name}</span></ExternalLinkAnchor>)}<ResourceShare resource={resource} /></nav>;
 }
 
 function DonateBox() {
@@ -216,5 +207,5 @@ export default function App({ path = typeof window === 'undefined' ? '/' : windo
   const resource = snapshot.resources.find(item => item.path === normalizedPath);
   const category = getCategoryDirectory(snapshot.resources).find(item => `/${item.slug}/` === normalizedPath);
   const home = normalizedPath === '/';
-  return <><a className="skip-link" href="#main">Skip to content</a><Header compact={!home && !category} /><Notification /><main id="main" className={home || category ? 'home-page' : undefined}>{normalizedPath === '/privacy/' ? <Privacy /> : resource ? <Detail resource={resource} /> : category ? <CategoryPage category={category} /> : home ? <Home /> : <section className="not-found content-width"><p className="eyebrow">404</p><h1>Resource Not Found</h1><p>This resource may have moved or is no longer published.</p><a className="action-link" href="/">Back to Resources<ArrowRight size={17} aria-hidden="true" /></a></section>}</main><Footer /><PrivacyControls /></>;
+  return <ResourceUIProvider resources={snapshot.resources}><a className="skip-link" href="#main">Skip to content</a>{home && <Header />}<InteractiveHeader home={home} resource={resource} /><Notification /><main id="main" className={home || category ? 'home-page' : undefined}>{normalizedPath === '/privacy/' ? <Privacy /> : resource ? <Detail resource={resource} /> : category ? <CategoryPage category={category} /> : home ? <Home /> : <section className="not-found content-width"><p className="eyebrow">404</p><h1>Resource Not Found</h1><p>This resource may have moved or is no longer published.</p><a className="action-link" href="/">Back to Resources<ArrowRight size={17} aria-hidden="true" /></a></section>}</main><Footer /><PrivacyControls /><ResourceOverlays /></ResourceUIProvider>;
 }
